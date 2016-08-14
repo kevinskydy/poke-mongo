@@ -16,6 +16,7 @@ $(function () {
 
           var pokemon = pokedex[$("#pokemon_name").val().trim().toLowerCase()],
               $results = $("#results tbody"),
+              $modals = $("#modal-container"),
               movesets;
 
           $("#results").hide();
@@ -31,6 +32,8 @@ $(function () {
           movesets = pokemon.calculateMovesets()
 
           $results.empty();
+          $modals.empty();
+          $("#")
           if (!movesets.length) {
             $("#loading_movesets").hide();
             $("#loading_empty").show();
@@ -38,12 +41,14 @@ $(function () {
           }
 
           for (var i in movesets) {
-            var moveset = movesets[i];
+            var moveset = movesets[i],
+                cModalID = moveset.chargedMove.name.replace(" ", "-"),
+                fModalID = moveset.fastMove.name.replace(" ", "-");
 
             $results.append(
               "<tr>" +
-                "<td>" + moveset.fastMove.name + "</td>" +
-                "<td>" + moveset.chargedMove.name + "</td>" +
+                "<td><a class='modal-trigger modal-trigger-f-" + fModalID + "' href='#modal-f-" + fModalID + "'>" + moveset.fastMove.name + "</td>" +
+                "<td><a class='modal-trigger modal-trigger-c-" + cModalID + "' href='#modal-c-" + cModalID + "'>" + moveset.chargedMove.name + "</a></td>" +
                 "<td>" + moveset.totalExecutionTime.toFixed(2) + "</td>" +
                 "<td>" + moveset.totalDamageDealt.toFixed(2) + "</td>" +
                 "<td style='font-weight:bold;'>" + moveset.comboDPS.toFixed(2) + "</td>" +
@@ -51,6 +56,72 @@ $(function () {
                 "<td style='font-weight:bold;'>" + moveset.fastDPS.toFixed(2) + "</td>" +
               "</tr>"
             );
+          }
+
+          for (var i in pokemon.chargedMoves) {
+            var m = chargedMoves[pokemon.chargedMoves[i]];
+
+            $modals.append(
+              "<div id='modal-c-" + m.name.replace(" ", "-") + "' class='modal bottom-sheet'>" +
+                "<div class='modal-content'>" +
+                  "<h4>" + m.name + "</h4>" +
+                  "<div class='row'>" +
+                    "<div class='col s3'>" +
+                      "Type: " + m.type +
+                    "</div>" +
+                    "<div class='col s3'>" +
+                      "Execution Time: " + m.executionTime +
+                    "</div>" +
+                    "<div class='col s3'>" +
+                      "Damage: " + m.damage +
+                    "</div>" +
+                    "<div class='col s3'>" +
+                      "Energy Cost: " + Math.abs(m.energyGain) +
+                    "</div>" +
+                  "</div>" +
+                "</div>" +
+                "<div class='modal-footer'>" +
+                  "<a href='#!' class='modal-action modal-close waves-effect waves-green btn-flat'>Close</a>" +
+                "</div>" +
+              "</div>"
+            );
+
+            $(".modal-trigger-c-" + m.name.replace(" ", "-")).leanModal({
+              dismissable: true
+            });
+          }
+
+          for (var i in pokemon.fastMoves) {
+            var m = fastMoves[pokemon.fastMoves[i]];
+
+            $modals.append(
+              "<div id='modal-f-" + m.name.replace(" ", "-") + "' class='modal bottom-sheet'>" +
+                "<div class='modal-content'>" +
+                  "<h4>" + m.name + "</h4>" +
+                  "<div class='row'>" +
+                    "<div class='col s3'>" +
+                      "Type: " + m.type +
+                    "</div>" +
+                    "<div class='col s3'>" +
+                      "Execution Time: " + m.executionTime +
+                    "</div>" +
+                    "<div class='col s3'>" +
+                      "Damage: " + m.damage +
+                    "</div>" +
+                    "<div class='col s3'>" +
+                      "Energy Gain: " + m.energyGain +
+                    "</div>" +
+                  "</div>" +
+                "</div>" +
+                "<div class='modal-footer'>" +
+                  "<a href='#!' class='modal-action modal-close waves-effect waves-green btn-flat'>Close</a>" +
+                "</div>" +
+              "</div>"
+            );
+
+            $(".modal-trigger-f-" + m.name.replace(" ", "-")).leanModal({
+              dismissable: true
+            });
           }
 
           $("#loading_movesets").hide();
