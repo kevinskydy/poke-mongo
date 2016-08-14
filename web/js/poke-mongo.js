@@ -65,20 +65,22 @@ $(function () {
               "<div id='modal-c-" + m.name.replace(" ", "-") + "' class='modal bottom-sheet'>" +
                 "<div class='modal-content'>" +
                   "<h4>" + m.name + "</h4>" +
-                  "<div class='row'>" +
-                    "<div class='col s3'>" +
-                      "Type: " + m.type +
-                    "</div>" +
-                    "<div class='col s3'>" +
-                      "Execution Time: " + m.executionTime +
-                    "</div>" +
-                    "<div class='col s3'>" +
-                      "Damage: " + m.damage +
-                    "</div>" +
-                    "<div class='col s3'>" +
-                      "Energy Cost: " + Math.abs(m.energyGain) +
-                    "</div>" +
-                  "</div>" +
+                  "<table>" +
+                    "<thead>" +
+                      "<th>Type</th>" +
+                      "<th>Damage</th>" +
+                      "<th>Energy Cost</th>" +
+                      "<th>Execution Time</th>" +
+                    "</thead>" +
+                    "<tbody>" +
+                      "<tr>" +
+                        "<td>" + m.type + "</td>" +
+                        "<td>" + m.damage + "</td>" +
+                        "<td>" + Math.abs(m.energyGain) + "</td>" +
+                        "<td>" + m.executionTime + "</td>" +
+                      "</tr>" +
+                    "</tbody>" +
+                  "</table>" +
                 "</div>" +
                 "<div class='modal-footer'>" +
                   "<a href='#!' class='modal-action modal-close waves-effect waves-green btn-flat'>Close</a>" +
@@ -98,20 +100,22 @@ $(function () {
               "<div id='modal-f-" + m.name.replace(" ", "-") + "' class='modal bottom-sheet'>" +
                 "<div class='modal-content'>" +
                   "<h4>" + m.name + "</h4>" +
-                  "<div class='row'>" +
-                    "<div class='col s3'>" +
-                      "Type: " + m.type +
-                    "</div>" +
-                    "<div class='col s3'>" +
-                      "Execution Time: " + m.executionTime +
-                    "</div>" +
-                    "<div class='col s3'>" +
-                      "Damage: " + m.damage +
-                    "</div>" +
-                    "<div class='col s3'>" +
-                      "Energy Gain: " + m.energyGain +
-                    "</div>" +
-                  "</div>" +
+                  "<table>" +
+                    "<thead>" +
+                      "<th>Type</th>" +
+                      "<th>Damage</th>" +
+                      "<th>Energy Gain</th>" +
+                      "<th>Execution Time</th>" +
+                    "</thead>" +
+                    "<tbody>" +
+                      "<tr>" +
+                        "<td>" + m.type + "</td>" +
+                        "<td>" + m.damage + "</td>" +
+                        "<td>" + m.energyGain + "</td>" +
+                        "<td>" + m.executionTime + "</td>" +
+                      "</tr>" +
+                    "</tbody>" +
+                  "</table>" +
                 "</div>" +
                 "<div class='modal-footer'>" +
                   "<a href='#!' class='modal-action modal-close waves-effect waves-green btn-flat'>Close</a>" +
