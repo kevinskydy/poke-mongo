@@ -1,10 +1,10 @@
 $(function () {
-  var pokemonsURL = "data/pokemons.csv",
-  // var pokemonsURL = "https://docs.google.com/spreadsheets/d/1CabMVyCj9xDv79qzNK5NmCIVC2Rw_yN7Kg4SwiGRXAQ/pub?output=csv",
-      fastMovesURL = "data/fastMoves.csv",
-      // fastMovesURL = "https://docs.google.com/spreadsheets/d/1TsKNAbRh7CBw6yRLadkOEEf5UqYA0g2rlMBDKbNB0h4/pub?output=csv&gid=1436234182",
-      chargedMovesURL = "data/chargedMoves.csv",
-      // chargedMovesURL = "https://docs.google.com/spreadsheets/d/1TsKNAbRh7CBw6yRLadkOEEf5UqYA0g2rlMBDKbNB0h4/pub?output=csv&gid=1493616609",
+  // var pokemonsURL = "data/pokemons.csv",
+  var pokemonsURL = "https://docs.google.com/spreadsheets/d/1CabMVyCj9xDv79qzNK5NmCIVC2Rw_yN7Kg4SwiGRXAQ/pub?output=csv",
+      // fastMovesURL = "data/fastMoves.csv",
+      fastMovesURL = "https://docs.google.com/spreadsheets/d/1TsKNAbRh7CBw6yRLadkOEEf5UqYA0g2rlMBDKbNB0h4/pub?output=csv&gid=1436234182",
+      // chargedMovesURL = "data/chargedMoves.csv",
+      chargedMovesURL = "https://docs.google.com/spreadsheets/d/1TsKNAbRh7CBw6yRLadkOEEf5UqYA0g2rlMBDKbNB0h4/pub?output=csv&gid=1493616609",
       pokedex = {},
       fastMoves = {},
       chargedMoves = {},
@@ -14,29 +14,44 @@ $(function () {
         $("#moveset_form").submit(function (event) {
           event.preventDefault();
 
-          var pokemon = pokedex[$("#pokemon_name").val().trim().toLowerCase()],
+          var name = $("#pokemon_name").val().trim().toLowerCase(),
+              pokemon = pokedex[name],
               $results = $("#results tbody"),
               $modals = $("#modal-container"),
               movesets;
 
-          $("#results").hide();
-          $("#loading_empty").hide();
-          $("#loading_movesets").show();
-
-          if (!pokemon) {
-            $("#loading_movesets").hide();
-            $("#loading_empty").show();
+          if (!name) {
             return;
           }
+
+          $(".container").addClass("loading");
+
+          if (!pokemon) {
+            Materialize.toast("Failed to catch " + name.slice(0,1).toUpperCase() + name.slice(1) + ".", 4000);
+            $(".container").removeClass("loading");
+            return;
+          }
+
+          $("#pokemon-details .name").html(pokemon.name);
+          $("#pokemon-details .types").html(pokemon.types.join(",<br>"));
+          $("#pokemon-details .attack").html(pokemon.attack);
+          $("#pokemon-details .defense").html(pokemon.defense);
+          $("#pokemon-details .stamina").html(pokemon.stamina);
+          $("#pokemon-details .fast-moves").html(pokemon.fastMoves.map(function (m) {
+            return "<a class='modal-trigger' href='#modal-f-" + m.name.replace(" ", "-") + "'>" + m.name + "</a>";
+          }).join(",<br>"));
+          $("#pokemon-details .charged-moves").html(pokemon.chargedMoves.map(function (m) {
+            return "<a class='modal-trigger' href='#modal-c-" + m.name.replace(" ", "-") + "'>" + m.name + "</a>";
+          }).join(",<br>"));
 
           movesets = pokemon.calculateMovesets()
 
           $results.empty();
           $modals.empty();
-          $("#")
+
           if (!movesets.length) {
-            $("#loading_movesets").hide();
-            $("#loading_empty").show();
+            Materialize.toast("Failed to calculate movesets.", 4000);
+            $(".container").addClass("loading");
             return;
           }
 
@@ -47,8 +62,8 @@ $(function () {
 
             $results.append(
               "<tr>" +
-                "<td><a class='modal-trigger modal-trigger-f-" + fModalID + "' href='#modal-f-" + fModalID + "'>" + moveset.fastMove.name + "</td>" +
-                "<td><a class='modal-trigger modal-trigger-c-" + cModalID + "' href='#modal-c-" + cModalID + "'>" + moveset.chargedMove.name + "</a></td>" +
+                "<td><a class='modal-trigger' href='#modal-f-" + fModalID + "'>" + moveset.fastMove.name + "</td>" +
+                "<td><a class='modal-trigger' href='#modal-c-" + cModalID + "'>" + moveset.chargedMove.name + "</a></td>" +
                 "<td>" + moveset.totalExecutionTime.toFixed(2) + "</td>" +
                 "<td>" + moveset.totalDamageDealt.toFixed(2) + "</td>" +
                 "<td style='font-weight:bold;'>" + moveset.comboDPS.toFixed(2) + "</td>" +
@@ -59,12 +74,12 @@ $(function () {
           }
 
           for (var i in pokemon.chargedMoves) {
-            var m = chargedMoves[pokemon.chargedMoves[i]];
+            var m = pokemon.chargedMoves[i];
 
             $modals.append(
               "<div id='modal-c-" + m.name.replace(" ", "-") + "' class='modal bottom-sheet'>" +
                 "<div class='modal-content'>" +
-                  "<h4>" + m.name + "</h4>" +
+                  "<h4 class='teal-text'>" + m.name + "</h4>" +
                   "<table>" +
                     "<thead>" +
                       "<th>Type</th>" +
@@ -83,23 +98,19 @@ $(function () {
                   "</table>" +
                 "</div>" +
                 "<div class='modal-footer'>" +
-                  "<a href='#!' class='modal-action modal-close waves-effect waves-green btn-flat'>Close</a>" +
+                  "<a href='#!' class='modal-action modal-close waves-effect waves-light btn-flat red lighten-1 white-text'>Close</a>" +
                 "</div>" +
               "</div>"
             );
-
-            $(".modal-trigger-c-" + m.name.replace(" ", "-")).leanModal({
-              dismissable: true
-            });
           }
 
           for (var i in pokemon.fastMoves) {
-            var m = fastMoves[pokemon.fastMoves[i]];
+            var m = pokemon.fastMoves[i];
 
             $modals.append(
               "<div id='modal-f-" + m.name.replace(" ", "-") + "' class='modal bottom-sheet'>" +
                 "<div class='modal-content'>" +
-                  "<h4>" + m.name + "</h4>" +
+                  "<h4 class='teal-text'>" + m.name + "</h4>" +
                   "<table>" +
                     "<thead>" +
                       "<th>Type</th>" +
@@ -118,22 +129,20 @@ $(function () {
                   "</table>" +
                 "</div>" +
                 "<div class='modal-footer'>" +
-                  "<a href='#!' class='modal-action modal-close waves-effect waves-green btn-flat'>Close</a>" +
+                  "<a href='#!' class='modal-action modal-close waves-effect waves-light btn-flat red lighten-1 white-text'>Close</a>" +
                 "</div>" +
               "</div>"
             );
-
-            $(".modal-trigger-f-" + m.name.replace(" ", "-")).leanModal({
-              dismissable: true
-            });
           }
 
-          $("#loading_movesets").hide();
-          $("#results").show();
+          $(".modal-trigger").leanModal({
+            dismissable: true
+          });
+
+          $(".container").removeClass("loading");
         });
 
-        $("#loading_movesets").hide();
-        $("#loading_empty").show();
+        $(".container").removeClass("loading");
       },
       loadFastMoves = function () {
         $.get(fastMovesURL, function (data, status, jqxhr) {
@@ -151,7 +160,6 @@ $(function () {
               getDPS: function () { this.damage / this.executionTime },
               getEPS: function () { this.energyGain / this.executionTime },
               getPokemonDamage: function (pokemon) {
-                // console.log(pokemon.types, this.type, pokemon.types.indexOf(this.type) >= 0);
                 return pokemon.types.indexOf(this.Type) >= 0 ? this.damage * STAB_MULTIPLIER : this.damage;
               },
               getPokemonDPS: function (pokemon) {
@@ -159,8 +167,7 @@ $(function () {
               }
             };
           }
-          // fastMoves["Thunder Shock"].getPokemonDamage(pokedex["pikachu"]);
-          onDataLoaded();
+          loadChargedMoves();
         });
       },
       loadChargedMoves = function () {
@@ -180,7 +187,6 @@ $(function () {
               getDPS: function () { this.damage / this.executionTime },
               getEPS: function () { this.energyGain / this.executionTime },
               getPokemonDamage: function (pokemon) {
-                // console.log(this.name, pokemon.types, this.type, pokemon.types.indexOf(this.type) >= 0);
                 return pokemon.types.indexOf(this.Type) >= 0 ? this.damage * STAB_MULTIPLIER : this.damage;
               },
               getPokemonDPS: function (pokemon) {
@@ -188,8 +194,7 @@ $(function () {
               }
             };
           }
-          // chargedMoves["Thunder"].getPokemonDamage(pokedex["pikachu"]);
-          loadFastMoves();
+          loadPokemons();
         });
       },
       loadPokemons = function () {
@@ -199,23 +204,25 @@ $(function () {
           for (var i = 1, parts = lines[i].split(",");
                i < lines.length-1;
                i++, parts = lines[i].split(",")) {
+
             pokedex[parts[0].trim().toLowerCase()] = {
               name: parts[0].trim(),
               types: parts[1].trim().split("|"),
-              fastMoves: parts[2].trim().split("|"),
-              chargedMoves: parts[3].trim().split("|"),
+              fastMoves: parts[2].trim().split("|").map(function (f, i, arr) { return fastMoves[f]; }),
+              chargedMoves: parts[3].trim().split("|").map(function (c, i, arr) { return chargedMoves[c]; }),
               attack: parseInt(parts[4].trim()),
               defense: parseInt(parts[5].trim()),
               stamina: parseInt(parts[6].trim()),
+              evolvesFrom: parts[7].trim().toLowerCase(),
               calculateMovesets: function () {
                 var movesets = [],
                     comparator = function (a, b) {
                       return a.comboDPS - b.comboDPS;
                     };
                 for (var i in this.fastMoves) {
-                  f = fastMoves[this.fastMoves[i]];
+                  f = this.fastMoves[i];
                   for (var j in this.chargedMoves) {
-                    c = chargedMoves[this.chargedMoves[j]];
+                    c = this.chargedMoves[j];
 
                     energyCost = parseFloat(Math.abs(c.energyGain));
                     fastTurns = energyCost / parseFloat(f.energyGain);
@@ -249,8 +256,9 @@ $(function () {
               },
             };
           }
-          loadChargedMoves();
+          onDataLoaded();
         });
       };
-  loadPokemons();
+  $(".container").addClass("loading");
+  loadFastMoves()
 });

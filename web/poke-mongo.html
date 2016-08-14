@@ -32,7 +32,7 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container loading">
       <div class="row">
         <div class="section">
           <form id="moveset_form" class="col s12">
@@ -48,15 +48,38 @@
             </div>
           </form>
         </div>
-        <div class="divider"></div>
-        <div id="testarea" class="section">
-
-        </div>
       </div>
       <div class="row">
         <div class="col s12">
-          <div class="card-panel white" style="overflow-x: auto;">
-            <table id="results" class="striped centered" style="display:none;">
+          <div id="pokemon-details" class="card-panel white loading-hidden" style="overflow-x: auto;">
+            <h5 class="name teal-text">Pokemon</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Atack</th>
+                  <th>Defense</th>
+                  <th>Stamina</th>
+                  <th>Fast Moves</th>
+                  <th>Charged Moves</th>
+                <tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="types"></td>
+                  <td class="attack"></td>
+                  <td class="defense"></td>
+                  <td class="stamina"></td>
+                  <td class="fast-moves"></td>
+                  <td class="charged-moves"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card-panel white loading-hidden" style="overflow-x: auto;">
+            <h5 class="teal-text">Movesets</h5>
+            <table id="results" class="striped centered">
               <thead>
                 <tr>
                     <th data-field="fast">Fast Move</th>
@@ -71,15 +94,19 @@
 
               <tbody></tbody>
             </table>
-            <div id="loading_empty" style="display:none;">No pokemon caught.</div>
-            <div id="loading_movesets">Catching your pokemon...</div>
+          </div>
+
+          <div class="card-panel white loading-visible" style="overflow-x: auto;">
+            <div class="progress">
+              <div class="indeterminate"></div>
+            </div>Catching your pokemon...
           </div>
         </div>
       </div>
     </div>
 
     <div id="modal-container"></div>
-    
+
     <script type="text/javascript" src="js/poke-mongo.js"></script>
   </body>
 </html>
