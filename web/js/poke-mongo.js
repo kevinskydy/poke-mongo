@@ -1,10 +1,10 @@
 $(function () {
-  var pokemonsURL = "data/pokemons.csv",
-  // var pokemonsURL = "https://docs.google.com/spreadsheets/d/1CabMVyCj9xDv79qzNK5NmCIVC2Rw_yN7Kg4SwiGRXAQ/pub?output=csv",
-      fastMovesURL = "data/fastMoves.csv",
-      // fastMovesURL = "https://docs.google.com/spreadsheets/d/1TsKNAbRh7CBw6yRLadkOEEf5UqYA0g2rlMBDKbNB0h4/pub?output=csv&gid=1436234182",
-      chargedMovesURL = "data/chargedMoves.csv",
-      // chargedMovesURL = "https://docs.google.com/spreadsheets/d/1TsKNAbRh7CBw6yRLadkOEEf5UqYA0g2rlMBDKbNB0h4/pub?output=csv&gid=1493616609",
+  // var pokemonsURL = "data/pokemons.csv",
+  var pokemonsURL = "https://docs.google.com/spreadsheets/d/1CabMVyCj9xDv79qzNK5NmCIVC2Rw_yN7Kg4SwiGRXAQ/pub?output=csv",
+      // fastMovesURL = "data/fastMoves.csv",
+      fastMovesURL = "https://docs.google.com/spreadsheets/d/1TsKNAbRh7CBw6yRLadkOEEf5UqYA0g2rlMBDKbNB0h4/pub?output=csv&gid=1436234182",
+      // chargedMovesURL = "data/chargedMoves.csv",
+      chargedMovesURL = "https://docs.google.com/spreadsheets/d/1TsKNAbRh7CBw6yRLadkOEEf5UqYA0g2rlMBDKbNB0h4/pub?output=csv&gid=1493616609",
       pokedex = {},
       fastMoves = {},
       chargedMoves = {},
@@ -260,5 +260,9 @@ $(function () {
         });
       };
   $(".container").addClass("loading");
+  $(".button-collapse").sideNav({
+    edge: "right",
+    closeOnClick: true
+  });
   loadFastMoves()
 });
