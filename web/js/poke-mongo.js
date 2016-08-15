@@ -160,7 +160,7 @@ $(function () {
               getDPS: function () { this.damage / this.executionTime },
               getEPS: function () { this.energyGain / this.executionTime },
               getPokemonDamage: function (pokemon) {
-                return pokemon.types.indexOf(this.Type) >= 0 ? this.damage * STAB_MULTIPLIER : this.damage;
+                return pokemon.types.indexOf(this.type) >= 0 ? this.damage * STAB_MULTIPLIER : this.damage;
               },
               getPokemonDPS: function (pokemon) {
                 return this.getPokemonDamage(pokemon) / this.executionTime;
@@ -187,7 +187,7 @@ $(function () {
               getDPS: function () { this.damage / this.executionTime },
               getEPS: function () { this.energyGain / this.executionTime },
               getPokemonDamage: function (pokemon) {
-                return pokemon.types.indexOf(this.Type) >= 0 ? this.damage * STAB_MULTIPLIER : this.damage;
+                return pokemon.types.indexOf(this.type) >= 0 ? this.damage * STAB_MULTIPLIER : this.damage;
               },
               getPokemonDPS: function (pokemon) {
                 return this.getPokemonDamage(pokemon) / this.executionTime;
