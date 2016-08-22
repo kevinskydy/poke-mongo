@@ -283,6 +283,56 @@ $(function () {
           $("#my-team-list").empty();
           $("#modal-clear-team").closeModal();
         });
+
+        $("#my-team-list").on("click", ".remove", function (e) {
+          e.preventDefault();
+
+          var $li = $(this).closest("li"),
+              key = $li.attr("data-local-key");
+
+          removeFromLocal(key);
+          $li.remove();
+        });
+
+        $("#my-team-list").on("click", ".view-iv", function (e) {
+          e.preventDefault();
+
+          var myTeam = localStorage.getObject("myTeam"),
+              $li = $(this).closest("li"),
+              key = $li.attr("data-local-key"),
+              data = myTeam[key],
+              pokemon,
+              matches;
+
+          for (var i in data) {
+            pokemon = pokedex[data[i][0].toLowerCase()];
+            matches = calculateIV(pokemon, data[i][1], data[i][2], data[i][3], data[i][4], matches);
+          }
+
+          $("#modal-iv-list tbody").empty();
+          $("#modal-iv-list .pokemon").text(pokemon.name);
+          $("#modal-iv-list .total").text(matches.length);
+
+          matches.sort(function (a, b) { return b.perfect- a.perfect; });
+          matches = matches.slice(0, 20)
+
+          $("#modal-iv-list .displayed").text(matches.length);
+          for (var i in matches) {
+            var m = matches[i];
+
+            $("#modal-iv-list tbody").append([
+              "<tr>",
+                "<td>", m.level, "</td>",
+                "<td>", m.attack, "</td>",
+                "<td>", m.defense, "</td>",
+                "<td>", m.stamina, "</td>",
+                "<td>", (m.perfect * 100.0).toFixed(1), "</td>",
+              "</tr>"
+            ].join(""));
+          }
+
+          $("#modal-iv-list").openModal();
+        });
       },
       loadFastMoves = function () {
         var callback = function (data, status, jqxhr) {
@@ -736,9 +786,8 @@ $(function () {
                   "<span class='badge' data-badge-caption=''>", perfString, "%</span>",
                 "</div>",
                 "<div class='collapsible-body'>",
-//                  "<div class='row'>",
-                    "<a class='waves-effect waves-light btn red right remove'><i class='material-icons white-text'>clear</i></a>",
-//                  "</div>",
+                  "<a class='waves-effect waves-light btn blue right view-iv'>View IV</a>",
+                  "<a class='waves-effect waves-light btn red right remove'><i class='material-icons white-text'>clear</i></a>",
                   "<form class='update-form'>",
                     "<table class='centered'>",
                       "<thead>",
@@ -767,12 +816,6 @@ $(function () {
         }
 
         $rows.forEach(function ($row) { $node.find("tbody").append($row); });
-        $node.find(".remove").click(function (e) {
-          e.preventDefault();
-
-          removeFromLocal(key);
-          $node.remove();
-        });
 
         $("#my-team-list").prepend($node);
         $node.find("select").material_select();
