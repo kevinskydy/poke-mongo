@@ -138,7 +138,7 @@ $(function () {
               ].join();
             };
 
-        $('#your-pokemon-form input').focus(function (e) {
+        $('input[type="text"], input[type="number"]').on("focus", function (e) {
           $(this).select();
         });
 
@@ -240,10 +240,6 @@ $(function () {
           $(".modal-trigger").leanModal({
             dismissable: true
           });
-        });
-
-        $('#add-member-form input[type="text"], #add-member-form input[type="number"]').focus(function (e) {
-          $(this).select();
         });
 
         $("#add-member-form").submit(function (e) {
