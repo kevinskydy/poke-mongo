@@ -138,6 +138,10 @@ $(function () {
               ].join();
             };
 
+        $('#your-pokemon-form input').focus(function (e) {
+          $(this).select();
+        });
+
         $("#your-pokemon-form").submit(function (e) {
           e.preventDefault();
 
