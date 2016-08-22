@@ -504,18 +504,10 @@ $(function () {
         return Array(4 - n.toString().length).join("0") + n.toString();
       },
       updateLocal = function (key, obj) {
-        var myTeam = localStorage.getObject("myTeam"),
-            testKey = getKey(pokedex[obj[0].toLowerCase()]);
+        var myTeam = localStorage.getObject("myTeam");
 
         if (!(key in myTeam)) {
           myTeam[key] = [];
-        }
-
-        if (testKey.split("-")[0] != key.split("-")[0]) {
-          var tempData = myTeam[key];
-          delete myTeam[key];
-          myTeam[testKey] = tempData;
-          key = testKey;
         }
 
         myTeam[key].push(obj);
@@ -642,6 +634,19 @@ $(function () {
         if (!matches.length) {
           Materialize.toast("Failed to calculate IVs for " + pokemon.name + ".", 4000);
           return;
+        }
+
+        var myTeam = localStorage.getObject("myTeam"),
+            testKey = getKey(pokemon);
+
+        if (testKey.split("-")[0] != key.split("-")[0]) {
+          var tempData = myTeam[key];
+          delete myTeam[key];
+          myTeam[testKey] = tempData;
+          key = testKey;
+          $li.attr("data-local-key", testKey)
+
+          localStorage.setObject("myTeam", myTeam);
         }
 
         updateLocal(key, [pokemon.name, cp, hp, dust, powered]);
