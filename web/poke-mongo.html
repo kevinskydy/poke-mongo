@@ -38,14 +38,6 @@
       <nav class="red lighten-1">
         <div class="nav-wrapper">
           <a href="#" class="brand-logo center"><span class="pokeball"></span></a>
-          <!--<a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
-
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#modal-types-chart" class="modal-trigger">Types Chart</a></li>
-          </ul>
-          <ul class="side-nav right" id="mobile-nav">
-            <li><a href="#modal-types-chart" class="modal-trigger">Types Chart</a></li>
-          </ul>-->
         </div>
       </nav>
     </header>
@@ -304,35 +296,17 @@
           </div>
 
           <div id="tab-types" class="col s12">
-            <h4 class='teal-text'>Types Chart</h4>
             <div style="overflow-x: auto;">
             <table class='bordered white-text'>
-            <!-- <?var data = JSON.parse(getTypeChart()),
-                  head = data[1],
-                  body = data.slice(2);
-            ?> -->
               <thead>
                 <tr>
                   <th></th>
                   <th class="cyan lighten-2 center-align" colspan="18">Defender</th>
                 </tr>
                 <tr>
-                <!-- <?for (var i = 0; i < head.length; i++) { ?>
-                  <th class="center-align <?= (i == 0) ? "orange lighten-2" : "cyan lighten-3" ?>"><?= head[i] ?></th>
-                <?} ?> -->
                 </tr>
               </thead>
               <tbody>
-              <!-- <?for (var i = 0; i < body.length; i++) { ?>
-                <tr>
-              <?  for(var j = 0; j < body[i].length; j++) { ?>
-                  <td class="<?= (j == 0) ? "right-align orange lighten-3" : "center-align" ?> <?= typeof(body[i][j]) == "number" ? (body[i][j] > 1.0 ? "green lighten-3": "red lighten-3") : ""  ?>"
-                    <?!= (j == 0) ? 'style="font-weight: bold;"' : ''  ?>>
-                    <?= body[i][j] ?>
-                  </td>
-              <?  } ?>
-                </tr>
-              <?} ?> -->
               </tbody>
             </table>
             </div>

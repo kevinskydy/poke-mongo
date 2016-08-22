@@ -9,7 +9,6 @@ if (Storage) {
 }
 
 $(function () {
-
   // var pokemonsURL = "https://docs.google.com/spreadsheets/d/1CabMVyCj9xDv79qzNK5NmCIVC2Rw_yN7Kg4SwiGRXAQ/pub?output=csv&gid=0",
   //     fastMovesURL = "https://docs.google.com/spreadsheets/d/1TsKNAbRh7CBw6yRLadkOEEf5UqYA0g2rlMBDKbNB0h4/pub?output=csv&gid=1436234182",
   //     chargedMovesURL = "https://docs.google.com/spreadsheets/d/1TsKNAbRh7CBw6yRLadkOEEf5UqYA0g2rlMBDKbNB0h4/pub?output=csv&gid=1493616609",
@@ -426,30 +425,54 @@ $(function () {
         $.get(pokemonsURL, callback);
       },
       loadTypes = function () {
-        var callback = function (data, status, jqxhr) {
-          // var data = [[], []] // <?!= getTypeChart(); ?>,
-          var types;
+        var $typesTable = $("#tab-types table"),
+            $trDefHead = $typesTable.find("thead tr:last"),
+            $tbody = $typesTable.find("tbody"),
+            callback = function (data, status, jqxhr) {
+              // var data = [[], []] // <?!= getTypeChart(); ?>,
+              var types;
 
-          data = data.split("\n");
-          types = data[1].split(",").slice(1)
-          data = data.slice(2);
+              data = data.split("\n");
+              types = data[1].split(",");
+              data = data.slice(2);
 
-          for (var atk = 0; atk < data.length; atk++) {
-            var row = data[atk].split(","),
-                atkType = row[0].trim();
+              for (var i = 0; i < types.length; i++) {
+                $trDefHead.append("<th class='center-align " + ((i == 0) ? "orange lighten-2" : "cyan lighten-3") + "'>" + types[i] + "</th>");
+              }
 
-            typeChart[atkType] = {}; // initialize typeChart for atk type
+              types = types.slice(1);
 
-            for (var def = 0; def < types.length; def++) {
-              var defType = types[def].trim(),
-                  dmgMultiplier = row[def+1];
+              for (var atk = 0; atk < data.length; atk++) {
+                var row = data[atk].split(","),
+                    atkType = row[0].trim(),
+                    markup = ["<tr>",
+                      "<td class='right-align orange lighten-3' style='font-weight: bold;'>",
+                        atkType,
+                      "</td>"
+                    ].join("");
 
-              typeChart[atkType][defType] = (dmgMultiplier ? parseFloat(dmgMultiplier) : 1.0); // set multiplier value
-            }
-          }
+                typeChart[atkType] = {}; // initialize typeChart for atk type
 
-          loadFastMoves();
-        };
+                for (var def = 0; def < types.length; def++) {
+                  var defType = types[def].trim(),
+                      dmgMultiplier = row[def+1].trim();
+
+                  markup += [
+                    "<td class='center-align ", (dmgMultiplier ? (parseFloat(dmgMultiplier) > 1.0 ? "green lighten-3": "red lighten-3"): ""), "'>",
+                      dmgMultiplier,
+                    "</td>"
+                  ].join("");
+
+                  typeChart[atkType][defType] = (dmgMultiplier ? parseFloat(dmgMultiplier) : 1.0); // set multiplier value
+
+                }
+
+                markup += "</tr>"
+                $tbody.append(markup);
+              }
+
+              loadFastMoves();
+            };
 
         $.get(typesURL, callback);
       },
