@@ -321,7 +321,6 @@ $(function () {
             };
           }
 
-          console.log(fastMoves);
           loadChargedMoves();
         };
 
@@ -351,7 +350,7 @@ $(function () {
               }
             };
           }
-          console.log(chargedMoves);
+
           loadPokemons();
         };
 
@@ -419,7 +418,7 @@ $(function () {
               },
             };
           }
-          console.log(pokedex);
+
           loadMyTeam();
           bindListeners();
         };
@@ -448,7 +447,7 @@ $(function () {
               typeChart[atkType][defType] = (dmgMultiplier ? parseFloat(dmgMultiplier) : 1.0); // set multiplier value
             }
           }
-          console.log(typeChart);
+
           loadFastMoves();
         };
 
@@ -466,11 +465,11 @@ $(function () {
             for (var j = 0; j < 4; j++) { // 4 powerups before new level
               var index = (i * 4) + j,
                   cpPair = cpMultipliers[index].split(",").slice(0,2);
-              console.log(i, index, cpPair);
+
               dustMultipliers[dParts[0]].push([parseFloat(cpPair[0]), parseFloat(cpPair[1])]);
             }
           }
-          console.log(dustMultipliers);
+
           loadTypes();
         };
 
@@ -647,7 +646,6 @@ $(function () {
               $poweredIconCheck = $(this).closest("tr").find('i.teal-text'),
               $poweredIconClear = $(this).closest("tr").find('i.red-text'),
               $poweredInput = $(this).closest("tr").find('input[name="powered"]');
-          console.log($(this).val());
 
           if (powered) {
             return;
