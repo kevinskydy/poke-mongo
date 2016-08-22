@@ -1,152 +1,152 @@
-Pokémon,Pokémon Type,Fast Attacks (DPS),Charge Attacks (DPS),Atk,Def,Sta,Evolves
-Bulbasaur,Grass,Tackle|Vine Whip,Power Whip|Sludge Bomb|Seed Bomb,126,126,90,
-Ivysaur,Grass,Vine Whip|Razor Leaf,Power Whip|Solar Beam|Sludge Bomb,156,158,120,Bulbasaur
-Venusaur,Grass,Vine Whip|Razor Leaf,Solar Beam|Sludge Bomb|Petal Blizzard,198,200,160,Ivysaur
-Charmander,Fire,Scratch|Ember,Flamethrower|Flame Burst|Flame Charge,128,108,78,
-Charmeleon,Fire,Scratch|Ember,Flamethrower|Flame Burst|Fire Punch,160,140,116,Charmander
-Charizard,Fire,Wing Attack|Ember,Fire Blast|Dragon Claw|Flamethrower,212,182,156,Charmeleon
-Squirtle,Water,Tackle|Bubble,Aqua Tail|Aqua Jet|Water Pulse,112,142,88,
-Wartortle,Water,Bite|Water Gun,Hydro Pump|Ice Beam|Aqua Jet,144,176,118,Squirtle
-Blastoise,Water,Bite|Water Gun,Hydro Pump|Ice Beam|Flash Cannon,186,222,158,Wartortle
-Caterpie,Bug,Bug Bite|Tackle,Struggle,62,66,90,
-Metapod,Bug,Bug Bite|Tackle,Struggle,56,86,100,Caterpie
-Butterfree,Bug|Flying,Bug Bite|Confusion,Psychic|Bug Buzz|Signal Beam,144,144,120,Metapod
-Weedle,Bug,Bug Bite|Poison Sting,Struggle,68,64,80,
-Kakuna,Bug,Bug Bite|Poison Sting,Struggle,62,82,90,Weedle
-Beedrill,Bug|Poison,Poison Jab|Bug Bite,Sludge Bomb|X-Scissor|Aerial Ace,144,130,130,Kakuna
-Pidgey,Normal|Flying,Tackle|Quick Attack,Aerial Ace|Twister|Air Cutter,94,90,80,
-Pidgeotto,Normal|Flying,Wing Attack|Steel Wing,Aerial Ace|Twister|Air Cutter,126,122,126,Pidgey
-Pidgeot,Normal|Flying,Wing Attack|Steel Wing,Hurricane|Aerial Ace|Air Cutter,170,166,166,Pidgeotto
-Rattata,Normal,Tackle|Quick Attack,Body Slam|Hyper Fang|Dig,92,86,60,
-Raticate,Normal,Bite|Quick Attack,Hyper Beam|Hyper Fang|Dig,146,150,110,Rattata
-Spearow,Normal|Flying,Peck|Quick Attack,Drill Peck|Aerial Ace|Twister,102,78,80,
-Fearow,Normal|Flying,Steel Wing|Peck,Drill Run|Aerial Ace|Twister,168,146,130,Spearow
-Ekans,Poison,Poison Sting|Acid,Gunk Shot|Sludge Bomb|Wrap,112,112,70,
-Arbok,Poison,Bite|Acid,Gunk Shot|Sludge Wave|Dark Pulse,166,166,120,Ekans
-Pikachu,Electric,Thunder Shock|Quick Attack,Thunder|Thunderbolt|Discharge,124,108,70,
-Raichu,Electric,Spark|Thunder Shock,Thunder|Brick Break|Thunder Punch,200,154,120,Pikachu
-Sandshrew,Ground,Scratch|Mud Shot,Rock Slide|Dig|Rock Tomb,90,114,100,
-Sandslash,Ground,Metal Claw|Mud Shot,Earthquake|Bulldoze|Rock Tomb,150,172,150,Sandshrew
-Nidoran (f),Poison,Bite|Poison Sting,Body Slam|Sludge Bomb|Poison Fang,100,104,110,
-Nidorina,Poison,Bite|Poison Sting,Sludge Bomb|Dig|Poison Fang,132,136,140,Nidoran (f)
-Nidoqueen,Poison|Ground,Bite|Poison Jab,Stone Edge|Earthquake|Sludge Wave,184,190,180,Nidorina
-Nidoran (m),Poison,Poison Sting|Peck,Body Slam|Sludge Bomb|Horn Attack,110,94,92,
-Nidorino,Poison,Bite|Poison Jab,Sludge Bomb|Dig|Horn Attack,142,128,122,Nidoran (m)
-Nidoking,Poison|Ground,Poison Jab|Fury Cutter,Megahorn|Earthquake|Sludge Wave,204,170,162,Nidorino
-Clefairy,Fairy,Pound|Zen Headbutt,Body Slam|Moonblast|Disarming Voice,116,124,140,
-Clefable,Fairy,Pound|Zen Headbutt,Moonblast|Psychic|Dazzling Gleam,178,178,190,Clefairy
-Vulpix,Fire,Ember|Quick Attack,Body Slam|Flamethrower|Flame Charge,106,118,76,
-Ninetails,Fire,Feint Attack|Ember,Fire Blast|Heat Wave|Flamethrower,176,194,146,Vulpix
-Jigglypuff,Normal|Fairy,Pound|Feint Attack,Body Slam|Play Rough|Disarming Voice,98,54,230,
-Wigglytuff,Normal|Fairy,Pound|Feint Attack,Hyper Beam|Play Rough|Dazzling Gleam,168,108,280,Jigglypuff
-Zubat,Poison|Flying,Bite|Quick Attack,Sludge Bomb|Poison Fang|Air Cutter,88,90,80,
-Golbat,Poison|Flying,Wing Attack|Bite,Poison Fang|Ominous Wind|Air Cutter,164,164,150,Zubat
-Oddish,Grass|Poison,Razor Leaf|Acid,Sludge Bomb|Moonblast|Seed Bomb,134,130,90,
-Gloom,Grass|Poison,Razor Leaf|Acid,Sludge Bomb|Moonblast|Petal Blizzard,162,158,120,Oddish
-Vileplume,Grass|Poison,Razor Leaf|Acid,Solar Beam|Sludge Bomb|Moonblast,202,190,150,Gloom
-Paras,Bug|Grass,Scratch|Bug Bite,Seed Bomb|Cross Poison|X-Scissor,122,120,70,
-Parasect,Bug|Grass,Bug Bite|Fury Cutter,Solar Beam|Cross Poison|X-Scissor,162,170,120,Paras
-Venonat,Bug|Poison,Bug Bite|Confusion,Signal Beam|Psybeam|Poison Fang,108,118,120,
-Venomoth,Bug|Poison,Bug Bite|Confusion,Psychic|Bug Buzz|Poison Fang,172,154,140,Venonat
-Diglett,Ground,Scratch|Mud Shot,Dig|Mud Bomb|Rock Tomb,108,86,20,
-Dugtrio,Ground,Mud Shot|Sucker Punch,Stone Edge|Earthquake|Mud Bomb,148,140,70,Diglett
-Meowth,Normal,Scratch|Bite,Body Slam|Dark Pulse|Night Slash,104,94,80,
-Persian,Normal,Scratch|Feint Attack,Play Rough|Power Gem|Night Slash,156,146,130,Meowth
-Psyduck,Water,Water Gun|Zen Headbutt,Cross Chop|Aqua Tail|Psybeam,132,112,100,
-Golduck,Water,Water Gun|Confusion,Hydro Pump|Psychic|Ice Beam,194,176,160,Psyduck
-Mankey,Fighting,Scratch|Karate Chop,Cross Chop|Brick Break|Low Sweep,122,96,80,
-Primape,Fighting,Low Kick|Karate Chop,Cross Chop|Low Sweep|Night Slash,178,150,130,Mankey
-Growlithe,Fire,Bite|Ember,Body Slam|Flamethrower|Flame Wheel,156,110,110,
-Arcanine,Fire,Bite|Fire Fang,Fire Blast|Flamethrower|Bulldoze,230,180,180,Growlithe
-Poliwag,Water,Mud Shot|Bubble,Body Slam|Mud Bomb|Bubble Beam,108,98,80,
-Poliwhirl,Water,Mud Shot|Bubble,Scald|Mud Bomb|Bubble Beam,132,132,130,Poliwag
-Poliwrath,Water|Fighting,Mud Shot|Bubble,Hydro Pump|Submission|Ice Punch,180,202,180,Poliwhirl
-Abra,Psychic,Zen Headbutt,Psyshock|Shadow Ball|Signal Beam,110,76,50,
-Kadabra,Psychic,Psycho Cut|Confusion,Shadow Ball|Dazzling Gleam|Psybeam,150,112,80,Abra
-Alakazam,Psychic,Psycho Cut|Confusion,Psychic|Shadow Ball|Dazzling Gleam,186,152,110,Kadabra
-Machop,Fighting,Low Kick|Karate Chop,Cross Chop|Brick Break|Low Sweep,118,96,140,
-Machoke,Fighting,Low Kick|Karate Chop,Cross Chop|Brick Break|Submission,154,144,160,Machop
-Machamp,Fighting,Bullet Punch|Karate Chop,Cross Chop|Stone Edge|Submission,198,180,180,Machoke
-Bellsprout,Grass|Poison,Vine Whip|Acid,Power Whip|Sludge Bomb|Wrap,158,78,100,
-Weepinbell,Grass|Poison,Razor Leaf|Acid,Power Whip|Sludge Bomb|Seed Bomb,190,110,130,Bellsprout
-Victreebel,Grass|Poison,Razor Leaf|Acid,Solar Beam|Sludge Bomb|Leaf Blade,222,152,160,Weepinbell
-Tentacool,Water|Poison,Bubble|Poison Sting,Water Pulse|Bubble Beam|Wrap,106,136,80,
-Tentacruel,Water|Poison,Poison Jab|Acid,Blizzard|Hydro Pump|Sludge Wave,170,196,160,Tentacool
-Geodude,Rock|Ground,Tackle|Rock Throw,Rock Slide|Dig|Rock Tomb,106,118,80,
-Graveler,Rock|Ground,Mud Shot|Rock Throw,Stone Edge|Rock Slide|Dig,142,156,110,Geodude
-Golem,Rock|Ground,Mud Shot|Rock Throw,Stone Edge|Earthquake|Ancient Power,176,198,160,Graveler
-Ponyta,Fire,Tackle|Ember,Fire Blast|Flame Wheel|Flame Charge,168,138,100,
-Rapidash,Fire,Ember|Low Kick,Fire Blast|Heat Wave|Drill Run,200,170,130,Ponyta
-Slowpoke,Water|Psychic,Water Gun|Confusion,Psychic|Water Pulse|Psybeam,110,110,180,
-Slowbro,Water|Psychic,Water Gun|Confusion,Psychic|Ice Beam|Water Pulse,184,198,190,Slowpoke
-Magnemite,Electric|Steel,Spark|Thunder Shock,Thunderbolt|Discharge|Magnet Bomb,128,138,50,
-Magneton,Electric|Steel,Spark|Thunder Shock,Flash Cannon|Discharge|Magnet Bomb,186,180,100,Magnemite
-Farfetch'd,Normal|Flying,Cut|Fury Cutter,Leaf Blade|Aerial Ace|Air Cutter,138,132,104,
-Doduo,Normal|Flying,Peck|Quick Attack,Drill Peck|Aerial Ace|Swift,126,96,70,
-Dodrio,Normal|Flying,Feint Attack|Steel Wing,Drill Peck|Aerial Ace|Air Cutter,182,150,120,Doduo
-Seel,Water,Water Gun|Ice Shard,Aqua Tail|Aqua Jet|Icy Wind,104,138,130,
-Dewgong,Water|Ice,Frost Breath|Ice Shard,Blizzard|Aqua Jet|Icy Wind,156,192,180,Seel
-Grimer,Poison,Mud Slap|Acid,Sludge Bomb|Sludge|Sludge Bomb,124,110,160,
-Muk,Poison,Poison Jab|Acid,Dark Pulse|Sludge|Sludge Bomb,180,188,210,Grimer
-Shellder,Water,Tackle|Ice Shard,Water Pulse|Bubble Beam|Icy Wind,120,112,60,
-Cloyster,Water|Ice,Frost Breath|Ice Shard,Blizzard|Hydro Pump|Icy Wind,196,196,100,Shellder
-Gastly,Ghost|Poison,Lick|Sucker Punch,Sludge Bomb|Dark Pulse|Ominous Wind,136,82,60,
-Haunter,Ghost|Poison,Shadow Claw|Lick,Sludge Bomb|Shadow Ball|Dark Pulse,172,118,90,Gastly
-Gengar,Ghost|Poison,Shadow Claw|Sucker Punch,Sludge Wave|Shadow Ball|Dark Pulse,204,156,120,Haunter
-Onix,Rock|Ground,Tackle|Rock Throw,Stone Edge|Rock Slide|Iron Head,90,186,70,
-Drowzee,Psychic,Pound|Confusion,Psychic|Psyshock|Psybeam,104,140,120,
-Hypno,Psychic,Zen Headbutt|Confusion,Psychic|Psyshock|Shadow Ball,162,196,170,Drowzee
-Krabby,Water,Mud Shot|Bubble,Vice Grip|Water Pulse|Bubble Beam,116,110,60,
-Kingler,Water,Metal Claw|Mud Shot,X-Scissor|Vice Grip|Water Pulse,178,168,110,Krabby
-Voltorb,Electric,Tackle|Spark,Thunderbolt|Signal Beam|Discharge,102,124,80,
-Electrode,Electric,Tackle|Spark,Hyper Beam|Thunderbolt|Discharge,150,174,120,Voltorb
-Exeggcute,Grass|Psychic,Confusion,Psychic|Seed Bomb|Ancient Power,110,132,120,
-Exeggutor,Grass|Psychic,Zen Headbutt|Confusion,Solar Beam|Psychic|Seed Bomb,232,164,190,Exeggcute
-Cubone,Ground,Mud Slap|Rock Smash,Bone Club|Dig|Bulldoze,102,150,100,
-Marowak,Ground,Mud Slap|Rock Smash,Earthquake|Bone Club|Dig,140,202,120,Cubone
-Hitmonlee,Fighting,Rock Smash|Low Kick,Stone Edge|Stomp|Low Sweep,148,172,100,
-Hitmonchan,Fighting,Rock Smash|Bullet Punch,Brick Break|Thunder Punch|Fire Punch|Ice Punch,138,204,100,
-Lickitung,Normal,Zen Headbutt|Lick,Power Whip|Hyper Beam|Stomp,126,160,180,
-Koffing,Poison,Tackle|Acid,Sludge Bomb|Dark Pulse|Sludge,136,142,80,
-Weezing,Poison,Tackle|Acid,Sludge Bomb|Shadow Ball|Dark Pulse,190,198,130,Koffing
-Rhyhorn,Ground|Rock,Mud Slap|Rock Smash,Stomp|Horn Attack|Bulldoze,110,116,160,
-Rhydon,Ground|Rock,Mud Slap|Rock Smash,Stone Edge|Megahorn|Earthquake,166,160,210,Rhyhorn
-Chansey,Normal,Pound|Zen Headbutt,Psychic|Dazzling Gleam|Psybeam,40,60,500,
-Tangela,Grass,Vine Whip,Power Whip|Solar Beam|Sludge Bomb,164,152,130,
-Kangaskhan,Normal,Mud Slap|Low Kick,Earthquake|Brick Break|Stomp,142,178,210,
-Horsea,Water,Water Gun|Bubble,Dragon Pulse|Flash Cannon|Bubble Beam,122,100,60,
-Seadra,Water,Water Gun|Dragon Breath,Blizzard|Hydro Pump|Dragon Pulse,176,150,110,Horsea
-Goldeen,Water,Mud Shot|Peck,Aqua Tail|Horn Attack|Water Pulse,112,126,90,
-Seaking,Water,Water Gun|Quick Attack,Megahorn|Drill Run|Icy Wind,172,160,160,Goldeen
-Staryu,Water,Water Gun|Quick Attack,Power Gem|Bubble Beam|Swift,130,128,60,
-Starmie,Water|Psychic,Water Gun|Quick Attack,Hydro Pump|Power Gem|Psybeam,194,192,120,Staryu
-Mr. Mime,Psychic|Fairy,Zen Headbutt|Confusion,Psychic|Shadow Ball|Psybeam,154,196,80,
-Scyther,Bug|Flying,Steel Wing|Fury Cutter,Bug Buzz|X-Scissor|Night Slash,176,180,140,
-Jynx,Ice|Psychic,Pound|Frost Breath,Psyshock|Psybeam|Draining Kiss,172,134,130,
-Electabuzz,Electric,Thunder Shock|Low Kick,Thunder|Thunderbolt|Thunder Punch,198,160,130,
-Magmar,Fire,Ember|Karate Chop,Fire Blast|Flamethrower|Fire Punch,214,158,130,
-Pinsir,Bug,Rock Smash|Fury Cutter,X-Scissor|Submission|Vice Grip,184,186,130,
-Tauros,Normal,Zen Headbutt|Tackle,Earthquake|Iron Head|Horn Attack,148,184,150,
-Magikarp,Water,Splash,Struggle,42,84,40,
-Gyarados,Water|Flying,Bite|Dragon Breath,Hydro Pump|Dragon Pulse|Twister,192,196,190,Magikarp
-Lapras,Water|Ice,Frost Breath|Ice Shard),Blizzard|Dragon Pulse|Ice Beam,186,190,260,
-Ditto,Normal,Pound,Struggle,110,110,96,
-Eevee,Normal,Tackle|Quick Attack,Body Slam|Dig|Swift,114,128,110,
-Vaporeon,Water,Water Gun,Hydro Pump|Aqua Tail|Water Pulse,186,168,260,Eevee
-Jolteon,Electric,Thunder Shock,Thunder|Thunderbolt|Discharge,192,174,130,Eevee
-Flareon,Fire,Ember,Fire Blast|Heat Wave|Flamethrower,238,178,130,Eevee
-Porygon,Normal,Tackle|Quick Attack,Signal Beam|Discharge|Psybeam,156,158,130,
-Omanyte,Rock|Water,Water Gun|Mud Shot,Brine|Ancient Power|Rock Tomb,132,160,70,
-Omastar,Rock|Water,Water Gun|Rock Throw,Hydro Pump|Rock Slide|Ancient Power,180,202,140,Omanyte
-Kabuto,Rock|Water,Scratch|Mud Shot,Aqua Jet|Ancient Power|Rock Tomb,148,142,60,
-Kabutops,Rock|Water,Mud Shot|Fury Cutter,Stone Edge|Water Pulse|Ancient Power,190,190,120,Kabuto
-Aerodactyl,Rock|Flying,Bite|Steel Wing,Hyper Beam|Iron Head|Ancient Power,182,162,160,
-Snorlax,Normal,Zen Headbutt|Lick,Body Slam|Hyper Beam|Earthquake,180,180,320,
-Articuno,Ice|Flying,Frost Breath,Blizzard|Ice Beam|Icy Wind,198,242,180,
-Zapdos,Electric,Thunder Shock,Thunder|Thunderbolt|Discharge,232,194,180,
-Moltres,Fire,Ember,Fire Blast|Heat Wave|Flamethrower,242,194,180,
-Dratini,Dragon,Dragon Breath,Aqua Tail|Twister|Wrap,128,110,82,
-Dragonair,Dragon,Dragon Breath,Dragon Pulse|Aqua Tail|Wrap,170,152,122,Dratini
-Dragonite,Dragon|Flying,Dragon Breath|Steel Wing,Hyper Beam|Dragon Claw|Dragon Pulse,250,212,182,Dragonair
-Mewtwo,Psychic,Psycho Cut|Confusion,Hyper Beam|Psychic|Shadow Ball,284,202,212,
-Mew,Psychic,Pound,Hurricane|Solar Beam|Fire Blast|Hyper Beam|Earthquake|Thunder|Moonblast|Psychic|Dragon Pulse,220,220,200,
+Pokémon,Pokémon Type,Fast Attacks (DPS),Charge Attacks (DPS),Atk,Def,Sta,Evolves from,Evolves To
+Bulbasaur,Grass,Tackle|Vine Whip,Power Whip|Sludge Bomb|Seed Bomb,126,126,90,,Ivysaur
+Ivysaur,Grass,Vine Whip|Razor Leaf,Power Whip|Solar Beam|Sludge Bomb,156,158,120,Bulbasaur,Venusaur
+Venusaur,Grass,Vine Whip|Razor Leaf,Solar Beam|Sludge Bomb|Petal Blizzard,198,200,160,Ivysaur,
+Charmander,Fire,Scratch|Ember,Flamethrower|Flame Burst|Flame Charge,128,108,78,,Charmeleon
+Charmeleon,Fire,Scratch|Ember,Flamethrower|Flame Burst|Fire Punch,160,140,116,Charmander,Charizard
+Charizard,Fire,Wing Attack|Ember,Fire Blast|Dragon Claw|Flamethrower,212,182,156,Charmeleon,
+Squirtle,Water,Tackle|Bubble,Aqua Tail|Aqua Jet|Water Pulse,112,142,88,,Wartortle
+Wartortle,Water,Bite|Water Gun,Hydro Pump|Ice Beam|Aqua Jet,144,176,118,Squirtle,Blastoise
+Blastoise,Water,Bite|Water Gun,Hydro Pump|Ice Beam|Flash Cannon,186,222,158,Wartortle,
+Caterpie,Bug,Bug Bite|Tackle,Struggle,62,66,90,,Metapod
+Metapod,Bug,Bug Bite|Tackle,Struggle,56,86,100,Caterpie,Butterfree
+Butterfree,Bug|Flying,Bug Bite|Confusion,Psychic|Bug Buzz|Signal Beam,144,144,120,Metapod,
+Weedle,Bug,Bug Bite|Poison Sting,Struggle,68,64,80,,Kakuna
+Kakuna,Bug,Bug Bite|Poison Sting,Struggle,62,82,90,Weedle,Beedrill
+Beedrill,Bug|Poison,Poison Jab|Bug Bite,Sludge Bomb|X-Scissor|Aerial Ace,144,130,130,Kakuna,
+Pidgey,Normal|Flying,Tackle|Quick Attack,Aerial Ace|Twister|Air Cutter,94,90,80,,Pidgeotto
+Pidgeotto,Normal|Flying,Wing Attack|Steel Wing,Aerial Ace|Twister|Air Cutter,126,122,126,Pidgey,Pidgeot
+Pidgeot,Normal|Flying,Wing Attack|Steel Wing,Hurricane|Aerial Ace|Air Cutter,170,166,166,Pidgeotto,
+Rattata,Normal,Tackle|Quick Attack,Body Slam|Hyper Fang|Dig,92,86,60,,Raticate
+Raticate,Normal,Bite|Quick Attack,Hyper Beam|Hyper Fang|Dig,146,150,110,Rattata,
+Spearow,Normal|Flying,Peck|Quick Attack,Drill Peck|Aerial Ace|Twister,102,78,80,,Fearow
+Fearow,Normal|Flying,Steel Wing|Peck,Drill Run|Aerial Ace|Twister,168,146,130,Spearow,
+Ekans,Poison,Poison Sting|Acid,Gunk Shot|Sludge Bomb|Wrap,112,112,70,,Arbok
+Arbok,Poison,Bite|Acid,Gunk Shot|Sludge Wave|Dark Pulse,166,166,120,Ekans,
+Pikachu,Electric,Thunder Shock|Quick Attack,Thunder|Thunderbolt|Discharge,124,108,70,,Raichu
+Raichu,Electric,Spark|Thunder Shock,Thunder|Brick Break|Thunder Punch,200,154,120,Pikachu,
+Sandshrew,Ground,Scratch|Mud Shot,Rock Slide|Dig|Rock Tomb,90,114,100,,Sandslash
+Sandslash,Ground,Metal Claw|Mud Shot,Earthquake|Bulldoze|Rock Tomb,150,172,150,Sandshrew,
+Nidoran (f),Poison,Bite|Poison Sting,Body Slam|Sludge Bomb|Poison Fang,100,104,110,,Nidorina
+Nidorina,Poison,Bite|Poison Sting,Sludge Bomb|Dig|Poison Fang,132,136,140,Nidoran (f),Nidoqueen
+Nidoqueen,Poison|Ground,Bite|Poison Jab,Stone Edge|Earthquake|Sludge Wave,184,190,180,Nidorina,
+Nidoran (m),Poison,Poison Sting|Peck,Body Slam|Sludge Bomb|Horn Attack,110,94,92,,Nidorino
+Nidorino,Poison,Bite|Poison Jab,Sludge Bomb|Dig|Horn Attack,142,128,122,Nidoran (m),Nidoking
+Nidoking,Poison|Ground,Poison Jab|Fury Cutter,Megahorn|Earthquake|Sludge Wave,204,170,162,Nidorino,
+Clefairy,Fairy,Pound|Zen Headbutt,Body Slam|Moonblast|Disarming Voice,116,124,140,,Clefable
+Clefable,Fairy,Pound|Zen Headbutt,Moonblast|Psychic|Dazzling Gleam,178,178,190,Clefairy,
+Vulpix,Fire,Ember|Quick Attack,Body Slam|Flamethrower|Flame Charge,106,118,76,,Ninetails
+Ninetails,Fire,Feint Attack|Ember,Fire Blast|Heat Wave|Flamethrower,176,194,146,Vulpix,
+Jigglypuff,Normal|Fairy,Pound|Feint Attack,Body Slam|Play Rough|Disarming Voice,98,54,230,,Wigglytuff
+Wigglytuff,Normal|Fairy,Pound|Feint Attack,Hyper Beam|Play Rough|Dazzling Gleam,168,108,280,Jigglypuff,
+Zubat,Poison|Flying,Bite|Quick Attack,Sludge Bomb|Poison Fang|Air Cutter,88,90,80,,Golbat
+Golbat,Poison|Flying,Wing Attack|Bite,Poison Fang|Ominous Wind|Air Cutter,164,164,150,Zubat,
+Oddish,Grass|Poison,Razor Leaf|Acid,Sludge Bomb|Moonblast|Seed Bomb,134,130,90,,Gloom
+Gloom,Grass|Poison,Razor Leaf|Acid,Sludge Bomb|Moonblast|Petal Blizzard,162,158,120,Oddish,Vileplume
+Vileplume,Grass|Poison,Razor Leaf|Acid,Solar Beam|Sludge Bomb|Moonblast,202,190,150,Gloom,
+Paras,Bug|Grass,Scratch|Bug Bite,Seed Bomb|Cross Poison|X-Scissor,122,120,70,,Parasect
+Parasect,Bug|Grass,Bug Bite|Fury Cutter,Solar Beam|Cross Poison|X-Scissor,162,170,120,Paras,
+Venonat,Bug|Poison,Bug Bite|Confusion,Signal Beam|Psybeam|Poison Fang,108,118,120,,Venomoth
+Venomoth,Bug|Poison,Bug Bite|Confusion,Psychic|Bug Buzz|Poison Fang,172,154,140,Venonat,
+Diglett,Ground,Scratch|Mud Shot,Dig|Mud Bomb|Rock Tomb,108,86,20,,Dugtrio
+Dugtrio,Ground,Mud Shot|Sucker Punch,Stone Edge|Earthquake|Mud Bomb,148,140,70,Diglett,
+Meowth,Normal,Scratch|Bite,Body Slam|Dark Pulse|Night Slash,104,94,80,,Persian
+Persian,Normal,Scratch|Feint Attack,Play Rough|Power Gem|Night Slash,156,146,130,Meowth,
+Psyduck,Water,Water Gun|Zen Headbutt,Cross Chop|Aqua Tail|Psybeam,132,112,100,,Golduck
+Golduck,Water,Water Gun|Confusion,Hydro Pump|Psychic|Ice Beam,194,176,160,Psyduck,
+Mankey,Fighting,Scratch|Karate Chop,Cross Chop|Brick Break|Low Sweep,122,96,80,,Primape
+Primape,Fighting,Low Kick|Karate Chop,Cross Chop|Low Sweep|Night Slash,178,150,130,Mankey,
+Growlithe,Fire,Bite|Ember,Body Slam|Flamethrower|Flame Wheel,156,110,110,,Arcanine
+Arcanine,Fire,Bite|Fire Fang,Fire Blast|Flamethrower|Bulldoze,230,180,180,Growlithe,
+Poliwag,Water,Mud Shot|Bubble,Body Slam|Mud Bomb|Bubble Beam,108,98,80,,Poliwhirl
+Poliwhirl,Water,Mud Shot|Bubble,Scald|Mud Bomb|Bubble Beam,132,132,130,Poliwag,Poliwrath
+Poliwrath,Water|Fighting,Mud Shot|Bubble,Hydro Pump|Submission|Ice Punch,180,202,180,Poliwhirl,
+Abra,Psychic,Zen Headbutt,Psyshock|Shadow Ball|Signal Beam,110,76,50,,Kadabra
+Kadabra,Psychic,Psycho Cut|Confusion,Shadow Ball|Dazzling Gleam|Psybeam,150,112,80,Abra,Alakazam
+Alakazam,Psychic,Psycho Cut|Confusion,Psychic|Shadow Ball|Dazzling Gleam,186,152,110,Kadabra,
+Machop,Fighting,Low Kick|Karate Chop,Cross Chop|Brick Break|Low Sweep,118,96,140,,Machoke
+Machoke,Fighting,Low Kick|Karate Chop,Cross Chop|Brick Break|Submission,154,144,160,Machop,Machamp
+Machamp,Fighting,Bullet Punch|Karate Chop,Cross Chop|Stone Edge|Submission,198,180,180,Machoke,
+Bellsprout,Grass|Poison,Vine Whip|Acid,Power Whip|Sludge Bomb|Wrap,158,78,100,,Weepinbell
+Weepinbell,Grass|Poison,Razor Leaf|Acid,Power Whip|Sludge Bomb|Seed Bomb,190,110,130,Bellsprout,Victreebel
+Victreebel,Grass|Poison,Razor Leaf|Acid,Solar Beam|Sludge Bomb|Leaf Blade,222,152,160,Weepinbell,
+Tentacool,Water|Poison,Bubble|Poison Sting,Water Pulse|Bubble Beam|Wrap,106,136,80,,Tentacruel
+Tentacruel,Water|Poison,Poison Jab|Acid,Blizzard|Hydro Pump|Sludge Wave,170,196,160,Tentacool,
+Geodude,Rock|Ground,Tackle|Rock Throw,Rock Slide|Dig|Rock Tomb,106,118,80,,Graveler
+Graveler,Rock|Ground,Mud Shot|Rock Throw,Stone Edge|Rock Slide|Dig,142,156,110,Geodude,Golem
+Golem,Rock|Ground,Mud Shot|Rock Throw,Stone Edge|Earthquake|Ancient Power,176,198,160,Graveler,
+Ponyta,Fire,Tackle|Ember,Fire Blast|Flame Wheel|Flame Charge,168,138,100,,Rapidash
+Rapidash,Fire,Ember|Low Kick,Fire Blast|Heat Wave|Drill Run,200,170,130,Ponyta,
+Slowpoke,Water|Psychic,Water Gun|Confusion,Psychic|Water Pulse|Psybeam,110,110,180,,Slowbro
+Slowbro,Water|Psychic,Water Gun|Confusion,Psychic|Ice Beam|Water Pulse,184,198,190,Slowpoke,
+Magnemite,Electric|Steel,Spark|Thunder Shock,Thunderbolt|Discharge|Magnet Bomb,128,138,50,,Magneton
+Magneton,Electric|Steel,Spark|Thunder Shock,Flash Cannon|Discharge|Magnet Bomb,186,180,100,Magnemite,
+Farfetch'd,Normal|Flying,Cut|Fury Cutter,Leaf Blade|Aerial Ace|Air Cutter,138,132,104,,
+Doduo,Normal|Flying,Peck|Quick Attack,Drill Peck|Aerial Ace|Swift,126,96,70,,Dodrio
+Dodrio,Normal|Flying,Feint Attack|Steel Wing,Drill Peck|Aerial Ace|Air Cutter,182,150,120,Doduo,
+Seel,Water,Water Gun|Ice Shard,Aqua Tail|Aqua Jet|Icy Wind,104,138,130,,Dewgong
+Dewgong,Water|Ice,Frost Breath|Ice Shard,Blizzard|Aqua Jet|Icy Wind,156,192,180,Seel,
+Grimer,Poison,Mud Slap|Acid,Sludge Bomb|Sludge|Sludge Bomb,124,110,160,,Muk
+Muk,Poison,Poison Jab|Acid,Dark Pulse|Sludge|Sludge Bomb,180,188,210,Grimer,
+Shellder,Water,Tackle|Ice Shard,Water Pulse|Bubble Beam|Icy Wind,120,112,60,,Cloyster
+Cloyster,Water|Ice,Frost Breath|Ice Shard,Blizzard|Hydro Pump|Icy Wind,196,196,100,Shellder,
+Gastly,Ghost|Poison,Lick|Sucker Punch,Sludge Bomb|Dark Pulse|Ominous Wind,136,82,60,,Haunter
+Haunter,Ghost|Poison,Shadow Claw|Lick,Sludge Bomb|Shadow Ball|Dark Pulse,172,118,90,Gastly,Gengar
+Gengar,Ghost|Poison,Shadow Claw|Sucker Punch,Sludge Wave|Shadow Ball|Dark Pulse,204,156,120,Haunter,
+Onix,Rock|Ground,Tackle|Rock Throw,Stone Edge|Rock Slide|Iron Head,90,186,70,,
+Drowzee,Psychic,Pound|Confusion,Psychic|Psyshock|Psybeam,104,140,120,,Hypno
+Hypno,Psychic,Zen Headbutt|Confusion,Psychic|Psyshock|Shadow Ball,162,196,170,Drowzee,
+Krabby,Water,Mud Shot|Bubble,Vice Grip|Water Pulse|Bubble Beam,116,110,60,,Kingler
+Kingler,Water,Metal Claw|Mud Shot,X-Scissor|Vice Grip|Water Pulse,178,168,110,Krabby,
+Voltorb,Electric,Tackle|Spark,Thunderbolt|Signal Beam|Discharge,102,124,80,,Electrode
+Electrode,Electric,Tackle|Spark,Hyper Beam|Thunderbolt|Discharge,150,174,120,Voltorb,
+Exeggcute,Grass|Psychic,Confusion,Psychic|Seed Bomb|Ancient Power,110,132,120,,Exeggutor
+Exeggutor,Grass|Psychic,Zen Headbutt|Confusion,Solar Beam|Psychic|Seed Bomb,232,164,190,Exeggcute,
+Cubone,Ground,Mud Slap|Rock Smash,Bone Club|Dig|Bulldoze,102,150,100,,Marowak
+Marowak,Ground,Mud Slap|Rock Smash,Earthquake|Bone Club|Dig,140,202,120,Cubone,
+Hitmonlee,Fighting,Rock Smash|Low Kick,Stone Edge|Stomp|Low Sweep,148,172,100,,
+Hitmonchan,Fighting,Rock Smash|Bullet Punch,Brick Break|Thunder Punch|Fire Punch|Ice Punch,138,204,100,,
+Lickitung,Normal,Zen Headbutt|Lick,Power Whip|Hyper Beam|Stomp,126,160,180,,
+Koffing,Poison,Tackle|Acid,Sludge Bomb|Dark Pulse|Sludge,136,142,80,,Weezing
+Weezing,Poison,Tackle|Acid,Sludge Bomb|Shadow Ball|Dark Pulse,190,198,130,Koffing,
+Rhyhorn,Ground|Rock,Mud Slap|Rock Smash,Stomp|Horn Attack|Bulldoze,110,116,160,,Rhydon
+Rhydon,Ground|Rock,Mud Slap|Rock Smash,Stone Edge|Megahorn|Earthquake,166,160,210,Rhyhorn,
+Chansey,Normal,Pound|Zen Headbutt,Psychic|Dazzling Gleam|Psybeam,40,60,500,,
+Tangela,Grass,Vine Whip,Power Whip|Solar Beam|Sludge Bomb,164,152,130,,
+Kangaskhan,Normal,Mud Slap|Low Kick,Earthquake|Brick Break|Stomp,142,178,210,,
+Horsea,Water,Water Gun|Bubble,Dragon Pulse|Flash Cannon|Bubble Beam,122,100,60,,Seadra
+Seadra,Water,Water Gun|Dragon Breath,Blizzard|Hydro Pump|Dragon Pulse,176,150,110,Horsea,
+Goldeen,Water,Mud Shot|Peck,Aqua Tail|Horn Attack|Water Pulse,112,126,90,,Seaking
+Seaking,Water,Poison Jab|Peck,Megahorn|Drill Run|Icy Wind,172,160,160,Goldeen,
+Staryu,Water,Water Gun|Quick Attack,Power Gem|Bubble Beam|Swift,130,128,60,,Starmie
+Starmie,Water|Psychic,Water Gun|Quick Attack,Hydro Pump|Power Gem|Psybeam,194,192,120,Staryu,
+Mr. Mime,Psychic|Fairy,Zen Headbutt|Confusion,Psychic|Shadow Ball|Psybeam,154,196,80,,
+Scyther,Bug|Flying,Steel Wing|Fury Cutter,Bug Buzz|X-Scissor|Night Slash,176,180,140,,
+Jynx,Ice|Psychic,Pound|Frost Breath,Psyshock|Psybeam|Draining Kiss,172,134,130,,
+Electabuzz,Electric,Thunder Shock|Low Kick,Thunder|Thunderbolt|Thunder Punch,198,160,130,,
+Magmar,Fire,Ember|Karate Chop,Fire Blast|Flamethrower|Fire Punch,214,158,130,,
+Pinsir,Bug,Rock Smash|Fury Cutter,X-Scissor|Submission|Vice Grip,184,186,130,,
+Tauros,Normal,Zen Headbutt|Tackle,Earthquake|Iron Head|Horn Attack,148,184,150,,
+Magikarp,Water,Splash,Struggle,42,84,40,,Gyarados
+Gyarados,Water|Flying,Bite|Dragon Breath,Hydro Pump|Dragon Pulse|Twister,192,196,190,Magikarp,
+Lapras,Water|Ice,Frost Breath|Ice Shard,Blizzard|Dragon Pulse|Ice Beam,186,190,260,,
+Ditto,Normal,Pound,Struggle,110,110,96,,
+Eevee,Normal,Tackle|Quick Attack,Body Slam|Dig|Swift,114,128,110,,Vaporeon|Jolteon|Flareon
+Vaporeon,Water,Water Gun,Hydro Pump|Aqua Tail|Water Pulse,186,168,260,Eevee,
+Jolteon,Electric,Thunder Shock,Thunder|Thunderbolt|Discharge,192,174,130,Eevee,
+Flareon,Fire,Ember,Fire Blast|Heat Wave|Flamethrower,238,178,130,Eevee,
+Porygon,Normal,Tackle|Quick Attack,Signal Beam|Discharge|Psybeam,156,158,130,,
+Omanyte,Rock|Water,Water Gun|Mud Shot,Brine|Ancient Power|Rock Tomb,132,160,70,,Omastar
+Omastar,Rock|Water,Water Gun|Rock Throw,Hydro Pump|Rock Slide|Ancient Power,180,202,140,Omanyte,
+Kabuto,Rock|Water,Scratch|Mud Shot,Aqua Jet|Ancient Power|Rock Tomb,148,142,60,,Kabutops
+Kabutops,Rock|Water,Mud Shot|Fury Cutter,Stone Edge|Water Pulse|Ancient Power,190,190,120,Kabuto,
+Aerodactyl,Rock|Flying,Bite|Steel Wing,Hyper Beam|Iron Head|Ancient Power,182,162,160,,
+Snorlax,Normal,Zen Headbutt|Lick,Body Slam|Hyper Beam|Earthquake,180,180,320,,
+Articuno,Ice|Flying,Frost Breath,Blizzard|Ice Beam|Icy Wind,198,242,180,,
+Zapdos,Electric,Thunder Shock,Thunder|Thunderbolt|Discharge,232,194,180,,
+Moltres,Fire,Ember,Fire Blast|Heat Wave|Flamethrower,242,194,180,,
+Dratini,Dragon,Dragon Breath,Aqua Tail|Twister|Wrap,128,110,82,,Dragonair
+Dragonair,Dragon,Dragon Breath,Dragon Pulse|Aqua Tail|Wrap,170,152,122,Dratini,Dragonite
+Dragonite,Dragon|Flying,Dragon Breath|Steel Wing,Hyper Beam|Dragon Claw|Dragon Pulse,250,212,182,Dragonair,
+Mewtwo,Psychic,Psycho Cut|Confusion,Hyper Beam|Psychic|Shadow Ball,284,202,212,,
+Mew,Psychic,Pound,Hurricane|Solar Beam|Fire Blast|Hyper Beam|Earthquake|Thunder|Moonblast|Psychic|Dragon Pulse,220,220,200,,

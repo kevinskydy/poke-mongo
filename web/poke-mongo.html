@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <base target="_self">
     <title>GO</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -9,12 +10,22 @@
 
     <link rel="stylesheet" href="css/poke-mongo.css">
 
+    <?!= include("css"); ?>
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <!-- <script type="text/javascript" src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.js"></script>
-    <script type="text/javascript" src="https://npmcdn.com/react@15.3.0/dist/react-with-addons.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script> -->
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-82546105-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
   </head>
   <body>
     <!--Import jQuery before materialize.js-->
@@ -22,93 +33,355 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
-    <nav class="red lighten-1">
-      <div class="nav-wrapper container">
-        <a href="#" class="brand-logo"><span class="pokeball"></span></a>
-        <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
+    <script src="js/poke-mongo.js"></script>
+    <header>
+      <nav class="red lighten-1">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo center"><span class="pokeball"></span></a>
+          <!--<a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
 
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#">Moveset</a></li>
-        </ul>
-        <ul class="side-nav right" id="mobile-nav">
-          <li><a href="#">Moveset</a></li>
-      </ul>
-      </div>
-    </nav>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#modal-types-chart" class="modal-trigger">Types Chart</a></li>
+          </ul>
+          <ul class="side-nav right" id="mobile-nav">
+            <li><a href="#modal-types-chart" class="modal-trigger">Types Chart</a></li>
+          </ul>-->
+        </div>
+      </nav>
+    </header>
 
-    <div class="container loading">
-      <div class="row">
-        <div class="section">
-          <form id="moveset_form" class="col s12">
+    <main>
+      <div class="content-wrapper">
+        <div class="row tabs-fixed">
+          <div class="col s12 white tabs-wrapper">
+            <ul class="tabs">
+              <li class="tab col s3"><a href="#tab-calc">Movesets</a></li>
+              <li class="tab col s3"><a class="active" href="#my-team">My Team</a></li>
+              <li class="tab col s3"><a href="#tab-types">Types Chart</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div id="tab-calc" class="col s12">
+            <!--<div class="container">-->
             <div class="row">
-              <div class="input-field col s6 offset-s3">
-                <input placeholder="Pokemon Name" id="pokemon_name" type="text" class="validate">
-                <!-- <label for="first_name">Pokemon Name</label> -->
-                <button class="btn waves-effect waves-light right" type="submit" name="action">Calculate
+              <div class="section">
+
+                <form id="your-pokemon-form" class="col s6 offset-s3 center-align">
+                  <input placeholder="Your Pokemon" id="your-pokemon" class="center-align" type="text" class="validate" required>
+                  <input placeholder="Enemy Pokemon (Optional)" id="enemy-pokemon" class="center-align" type="text" class="validate">
+                  <button class="btn-large waves-effect waves-light" type="submit" name="action">GO
+                  </button>
+                </form>
+
+              </div>
+            </div>
+
+            <div class="row has-match" style="display: none;">
+              <div class="col s12 m12 l12">
+                <div class="card-panel white">
+                  <h5 class="teal-text">Pokemon Info</h5>
+
+                  <div style="overflow-x: auto;">
+                  <table class="">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>Type</th>
+                        <th>Atk</th>
+                        <th>Def</th>
+                        <th>Sta</th>
+                        <th>Fast Moves</th>
+                        <th>Charged Moves</th>
+                      <tr>
+                    </thead>
+                    <tbody>
+                      <tr id="your-pokemon-details" class="has-match">
+                        <td><b class="name teal-text"></b></td>
+                        <td class="types"></td>
+                        <td class="attack"></td>
+                        <td class="defense"></td>
+                        <td class="stamina"></td>
+                        <td class="fast-moves"></td>
+                        <td class="charged-moves"></td>
+                      </tr>
+                      <tr id="enemy-pokemon-details" class="has-enemy-match" style="display: none;" >
+                        <td><b class="red-text">Enemy <span class="name"></span></b></td>
+                        <td class="types"></td>
+                        <td class="attack"></td>
+                        <td class="defense"></td>
+                        <td class="stamina"></td>
+                        <td class="fast-moves"></td>
+                        <td class="charged-moves"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div id="movesets" class="row has-match" style="display: none;">
+              <div class="col s12">
+
+                <div class="card-panel white">
+                  <h5><span class="teal-text name"></span>'s Movesets</h5>
+
+                  <div style="overflow-x: auto;">
+                  <table class="striped centered">
+                    <thead>
+                      <tr>
+                        <th data-field="fast">Fast Move</th>
+                        <th data-field="charged">Charged Move</th>
+                        <th data-field="combo_time">Combo<br>Execution Time</th>
+                        <th data-field="combo_damage">Combo<br>Damage</th>
+                        <th data-field="combo_dps">Combo DPS</th>
+                        <th data-field="fast_damage">Fast-Only<br>Damage</th>
+                        <th data-field="fast_dps">Fast Move<br>DPS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <div id="movesets-attacking" class="row has-enemy-match" style="display: none;">
+              <div class="col s12">
+
+                <div class="card-panel white">
+                  <h5><span class="teal-text name"></span>'s Movesets against <span class='red-text enemy-name'></span></h5>
+
+                  <div style="overflow-x: auto;">
+                  <table class="striped centered">
+                    <thead>
+                      <tr>
+                        <th data-field="fast">Fast Move</th>
+                        <th data-field="charged">Charged Move</th>
+                        <th data-field="combo_time">Combo<br>Execution Time</th>
+                        <th data-field="combo_damage">Combo<br>Damage</th>
+                        <th data-field="combo_dps">Combo DPS</th>
+                        <th data-field="fast_damage">Fast-Only<br>Damage</th>
+                        <th data-field="fast_dps">Fast Move<br>DPS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <div id="enemy-movesets" class="row has-enemy-match" style="display: none;">
+              <div class="col s12">
+
+                <div class="card-panel white">
+                  <h5><span class="red-text enemy-name"></span>'s Movesets</h5>
+
+                  <div style="overflow-x: auto;">
+                  <table class="striped centered">
+                    <thead>
+                      <tr>
+                        <th data-field="fast">Fast Move</th>
+                        <th data-field="charged">Charged Move</th>
+                        <th data-field="combo_time">Combo<br>Execution Time</th>
+                        <th data-field="combo_damage">Combo<br>Damage</th>
+                        <th data-field="combo_dps">Combo DPS</th>
+                        <th data-field="fast_damage">Fast-Only<br>Damage</th>
+                        <th data-field="fast_dps">Fast Move<br>DPS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <div id="enemy-movesets-attacking" class="row has-enemy-match" style="display: none;">
+              <div class="col s12">
+
+                <div class="card-panel white">
+                  <h5><span class="red-text enemy-name"></span>'s Movesets against <span class='teal-text name'></span></h5>
+
+                  <div style="overflow-x: auto;">
+                  <table class="striped centered">
+                    <thead>
+                      <tr>
+                        <th data-field="fast">Fast Move</th>
+                        <th data-field="charged">Charged Move</th>
+                        <th data-field="combo_time">Combo<br>Execution Time</th>
+                        <th data-field="combo_damage">Combo<br>Damage</th>
+                        <th data-field="combo_dps">Combo DPS</th>
+                        <th data-field="fast_damage">Fast-Only<br>Damage</th>
+                        <th data-field="fast_dps">Fast Move<br>DPS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <div class="row state-loading">
+              <div class="card-panel white">
+                  <div class="progress">
+                    <div class="indeterminate"></div>
+                  </div>Catching your pokemon...
+                </div>
+            </div>
+
+            <!--</div>-->
+          </div>
+
+          <div id="my-team" class="col s12 l12">
+            <div class="row">
+              <form id="add-member-form" class="col s12 l12 center-align">
+                <div class="row">
+                  <div class="col s12 l4 input-field">
+                    <input placeholder="Pokemon" id="member-pokemon" class="center-align" type="text" class="validate" required>
+                  </div>
+                  <div class="col s2 l1 input-field">
+                    <input placeholder="CP" id="member-cp" class="center-align" type="number" min=10 class="validate" required>
+                  </div>
+                  <div class="col s2 l1 input-field">
+                    <input placeholder="HP" id="member-hp" class="center-align" type="number" min=10 class="validate" required>
+                  </div>
+                  <div class="col s4 l1 input-field">
+                    <input placeholder="Dust" id="member-dust" class="center-align" type="number" min=200 max=10000 step=100 class="validate" required>
+                  </div>
+                  <div class="col s4 l2 input-field">
+                    <input id="member-powered" class="center-align" type="checkbox" class="validate">
+                    <label for="member-powered" class="">Powered Up?</label>
+                  </div>
+                  <div class="col s12 l3 input-field">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">
+                      <i class="material-icons left">add</i>Add Member
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="row">
+              <div class="col s12 l4 offset-l8 center-align">
+                <!--<select class="right">
+                  <option>Sort by Name</option>
+                  <option>Sort by Number</option>
+                  <option>Sort by CP</option>
+                  <option>Sort by Max IV</option>
+                </select>-->
+                <a class="btn waves-effect waves-light modal-trigger red" href="#modal-clear-team">
+                  <i class="material-icons left">clear</i>Remove All
+                </a>
+                <button id="refresh-team" class="btn waves-effect waves-light">
+                  <i class="material-icons left">refresh</i>Refresh
                 </button>
               </div>
             </div>
-          </form>
+
+            <div class="row">
+              <div class="col s12">
+                <ul id="my-team-list" class="collapsible popout collection" data-collapsible="expandable">
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div id="tab-types" class="col s12">
+            <h4 class='teal-text'>Types Chart</h4>
+            <div style="overflow-x: auto;">
+            <table class='bordered white-text'>
+            <!-- <?var data = JSON.parse(getTypeChart()),
+                  head = data[1],
+                  body = data.slice(2);
+            ?> -->
+              <thead>
+                <tr>
+                  <th></th>
+                  <th class="cyan lighten-2 center-align" colspan="18">Defender</th>
+                </tr>
+                <tr>
+                <!-- <?for (var i = 0; i < head.length; i++) { ?>
+                  <th class="center-align <?= (i == 0) ? "orange lighten-2" : "cyan lighten-3" ?>"><?= head[i] ?></th>
+                <?} ?> -->
+                </tr>
+              </thead>
+              <tbody>
+              <!-- <?for (var i = 0; i < body.length; i++) { ?>
+                <tr>
+              <?  for(var j = 0; j < body[i].length; j++) { ?>
+                  <td class="<?= (j == 0) ? "right-align orange lighten-3" : "center-align" ?> <?= typeof(body[i][j]) == "number" ? (body[i][j] > 1.0 ? "green lighten-3": "red lighten-3") : ""  ?>"
+                    <?!= (j == 0) ? 'style="font-weight: bold;"' : ''  ?>>
+                    <?= body[i][j] ?>
+                  </td>
+              <?  } ?>
+                </tr>
+              <?} ?> -->
+              </tbody>
+            </table>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="row">
-        <div class="col s12">
-          <div id="pokemon-details" class="card-panel white loading-hidden" style="overflow-x: auto;">
-            <h5 class="name teal-text">Pokemon</h2>
+    </main>
+
+    <div id="modal-moves"></div>
+    <div id="modal-misc">
+      <div id="modal-clear-team" class="modal bottom-sheet">
+        <div class="container">
+          <div class="modal-content">
+            <h5 class='red-text'>Remove All From My Team</h5>
+            <div class="divider"></div>
+            <p>Are you sure you want to remove everyone in the team?</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-light btn">Cancel</a>
+            <a id="clear-my-team" class="waves-effect waves-light btn red white-text" style="margin-right: 5px;">Yes, I'm sure</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="modal-iv-list" class="modal bottom-sheet">
+        <div class="container">
+          <div class="modal-content">
+            <h5><span class="pokemon">Pokemon</span> IV Details</h5>
             <table>
               <thead>
                 <tr>
-                  <th>Type</th>
-                  <th>Atack</th>
+                  <th>Level</th>
+                  <th>Attack</th>
                   <th>Defense</th>
                   <th>Stamina</th>
-                  <th>Fast Moves</th>
-                  <th>Charged Moves</th>
-                <tr>
+                  <th>% Perfect</th>
+                </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="types"></td>
-                  <td class="attack"></td>
-                  <td class="defense"></td>
-                  <td class="stamina"></td>
-                  <td class="fast-moves"></td>
-                  <td class="charged-moves"></td>
-                </tr>
               </tbody>
             </table>
           </div>
-
-          <div class="card-panel white loading-hidden" style="overflow-x: auto;">
-            <h5 class="teal-text">Movesets</h5>
-            <table id="results" class="striped centered">
-              <thead>
-                <tr>
-                    <th data-field="fast">Fast Move</th>
-                    <th data-field="charged">Charged Move</th>
-                    <th data-field="combo_time">Combo<br>Execution Time</th>
-                    <th data-field="combo_damage">Combo<br>Damage</th>
-                    <th data-field="combo_dps">Combo DPS</th>
-                    <th data-field="fast_damage">Fast-Only<br>Damage</th>
-                    <th data-field="fast_dps">Fast Move<br>DPS</th>
-                </tr>
-              </thead>
-
-              <tbody></tbody>
-            </table>
-          </div>
-
-          <div class="card-panel white loading-visible" style="overflow-x: auto;">
-            <div class="progress">
-              <div class="indeterminate"></div>
-            </div>Catching your pokemon...
+          <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-light btn">Cancel</a>
+            <a id="clear-my-team" class="waves-effect waves-light btn red white-text" style="margin-right: 5px;">Yes, I'm sure</a>
           </div>
         </div>
       </div>
     </div>
-
-    <div id="modal-container"></div>
-
-    <script type="text/javascript" src="js/poke-mongo.js"></script>
   </body>
 </html>

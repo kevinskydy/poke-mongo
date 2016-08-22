@@ -434,23 +434,116 @@ body ul:hover .greatball {
   opacity: 0.1;
 }*/
 
-
-
-
-
 /* Materialize Overrized */
+li .badge {
+  margin-right: 15px;
+}
+
+li.active .badge {
+  color: #fff;
+}
 
 /* Poke-mongo */
-/*input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-  background-color: rgb(255,255,255) !important;
-}*/
-
-.loading .loading-hidden {
-  display: none;
+.tabs-fixed {
+  height: 48px;
 }
 
-.container:not(.loading) .loading-visible {
-  display: none;
+.tabs-fixed .tabs-wrapper {
+  z-index: 997;
 }
+
+li .member-detail {
+  display: inline-block;
+  width: 25%;
+}
+
+li .member-detail.name {
+  font-weight: bold;
+  width: 40%;
+}
+
+li .remove {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 0.6rem;
+  margin: 5px 5px 0 0;
+}
+
+li .remove + i {
+  font-size: 1.0rem;
+  margin-right: 6px;
+}
+
+/* Type colors */
+.type-bug { background-color: #A8B820 }
+.type-bug.dark { background-color: #6D7815 }
+.type-bug.light { background-color: #C6D16E }
+
+.type-dark { background-color: #705848 }
+.type-dark.dark { background-color: #49392F }
+.type-dark.light { background-color: #A29288 }
+
+.type-dragon { background-color: #7038F8 }
+.type-dragon.dark { background-color: #4924A1 }
+.type-dragon.light { background-color: #A27DFA }
+
+.type-electric { background-color: #F8D030 }
+.type-electric.dark { background-color: #A1871F }
+.type-electric.light { background-color: #FAE078 }
+
+.type-fairy { background-color: #EE99AC }
+.type-fairy.dark { background-color: #9B6470 }
+.type-fairy.light { background-color: #F4BDC9 }
+
+.type-fighting { background-color: #C03028 }
+.type-fighting.dark { background-color: #7D1F1A }
+.type-fighting.light { background-color: #D67873 }
+
+.type-fire { background-color: #F08030 }
+.type-fire.dark { background-color: #9C531F }
+.type-fire.light { background-color: #F5AC78 }
+
+.type-flying { background-color: #A890F0 }
+.type-flying.dark { background-color: #6D5E9C }
+.type-flying.light { background-color: #C6B7F5 }
+
+.type-ghost { background-color: #705898 }
+.type-ghost.dark { background-color: #493963 }
+.type-ghost.light { background-color: #A292BC }
+
+.type-grass { background-color: #78C850 }
+.type-grass.dark { background-color: #4E8234 }
+.type-grass.light { background-color: #A7DB8D }
+
+.type-ground { background-color: #E0C068 }
+.type-ground.dark { background-color: #927D44 }
+.type-ground.light { background-color: #EBD69D }
+
+.type-ice { background-color: #98D8D8 }
+.type-ice.dark { background-color: #638D8D }
+.type-ice.light { background-color: #BCE6E6 }
+
+.type-normal { background-color: #A8A878 }
+.type-normal.dark { background-color: #6D6D4E }
+.type-normal.light { background-color: #C6C6A7 }
+
+.type-poison { background-color: #A040A0 }
+.type-poison.dark { background-color: #682A68 }
+.type-poison.light { background-color: #C183C1 }
+
+.type-psychic { background-color: #F85888 }
+.type-psychic.dark { background-color: #A13959 }
+.type-psychic.light { background-color: #FA92B2 }
+
+.type-rock { background-color: #B8A038 }
+.type-rock.dark { background-color: #786824 }
+.type-rock.light { background-color: #D1C17D }
+
+.type-steel { background-color: #B8B8D0 }
+.type-steel.dark { background-color: #787887 }
+.type-steel.light { background-color: #D1D1E0 }
+
+.type-water { background-color: #6890F0 }
+.type-water.dark { background-color: #445E9C }
+.type-water.light { background-color: #9DB7F5 }
