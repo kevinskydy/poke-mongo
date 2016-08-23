@@ -462,15 +462,15 @@ li .member-detail.name {
   width: 40%;
 }
 
-#my-team-list li .btn {
+#my-team-list li .collapsible-body > .btn {
   font-size: 12px;
-  height: 24px;
-  line-height: 24px;
+  height: 28px;
+  line-height: 28px;
   padding: 0 0.6rem;
-  margin: 5px 5px 0 0;
+  margin: 5px 5px 0 8px;
 }
 
-#my-team-list li .btn + i {
+#my-team-list li .collapsible-body > .btn i {
   font-size: 1.0rem;
   margin-right: 6px;
 }

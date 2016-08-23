@@ -20,6 +20,7 @@ $(function () {
       chargedMoves = {},
       typeChart = {}, // [attackingType][defendingType]
       dustMultipliers = {} //<?!= getDustMultipliers(); ?>,
+      levelMultipliers = {},
       STAB_MULTIPLIER = 1.25,
       CHARGE_TIME = 1.0,
       bindListeners = function() {
@@ -284,11 +285,32 @@ $(function () {
           $("#modal-clear-team").closeModal();
         });
 
+        $("#remove-member").click(function (e) {
+          var key = $(this).attr("data-remove-member"),
+              $li = $('#my-team-list li[data-local-key="' + key + '"]');
+
+          $("#remove-member").attr("data-remove-member", '');
+
+          removeFromLocal(key);
+          $li.remove();
+
+          $("#modal-remove-member").closeModal();
+        });
+
         $("#my-team-list").on("click", ".remove", function (e) {
           e.preventDefault();
 
           var $li = $(this).closest("li"),
-              key = $li.attr("data-local-key");
+              key = $li.attr("data-local-key"),
+              myTeam = localStorage.getObject("myTeam"),
+              data = myTeam[key];
+
+          $("#modal-remove-member .pokemon").text(data[data.length-1][0]);
+          $("#remove-member").attr("data-remove-member", key);
+          $("#modal-remove-member").openModal();
+
+          return;
+
 
           removeFromLocal(key);
           $li.remove();
@@ -461,6 +483,21 @@ $(function () {
 
                 return movesets
               },
+              getCP: function (level, atkIV, defIV, staIV) {
+                var s = Math.pow(this.stamina + staIV, 0.5),
+                    a = this.attack + atkIV,
+                    d = Math.pow(this.defense + defIV, 0.5),
+                    cpSq = Math.pow(levelMultipliers[level], 2),
+                    cpCheck = parseInt(Math.floor(cpSq * s * a * d / 10.0));
+
+                return cpCheck;
+              },
+              getHP: function (level, staIV) {
+                var cpMulti = levelMultipliers[level],
+                    hpCheck = parseInt(Math.floor((this.stamina + staIV) * cpMulti));
+
+                return hpCheck;
+              }
             };
           }
 
@@ -533,9 +570,12 @@ $(function () {
             dustMultipliers[dParts[0]] = [];
             for (var j = 0; j < 4; j++) { // 4 powerups before new level
               var index = (i * 4) + j,
-                  cpPair = cpMultipliers[index].split(",").slice(0,2);
+                  cpPair = cpMultipliers[index].split(",").slice(0,2),
+                  level = parseFloat(cpPair[0]),
+                  multiplier = parseFloat(cpPair[1]);
 
-              dustMultipliers[dParts[0]].push([parseFloat(cpPair[0]), parseFloat(cpPair[1])]);
+              dustMultipliers[dParts[0]].push([level, multiplier]);
+              levelMultipliers[level] = multiplier;
             }
           }
 
@@ -759,6 +799,9 @@ $(function () {
           $rows.push(createMemberRow(pokemon, cp, hp, dust, powered, matches));
 
           if (i ==  data.length-1) {
+            // console.log(pokemon.name,
+            //   pokemon.getCP(matches[0].level, matches[0].attack, matches[0].defense, matches[0].stamina),
+            //   pokemon.getHP(matches[0].level, matches[0].stamina));
             var minPerf = 1.0,
                 maxPerf = 0.0,
                 perfString = "";
@@ -787,7 +830,7 @@ $(function () {
                 "</div>",
                 "<div class='collapsible-body'>",
                   "<a class='waves-effect waves-light btn blue right view-iv'>View IV</a>",
-                  "<a class='waves-effect waves-light btn red right remove'><i class='material-icons white-text'>clear</i></a>",
+                  "<a class='waves-effect waves-light btn red right remove'><i class='material-icons white-text left'>clear</i>Remove</a>",
                   "<form class='update-form'>",
                     "<table class='centered'>",
                       "<thead>",
@@ -852,7 +895,7 @@ $(function () {
 
           for (var _s = 0; _s < 16; _s++) {
             var s = Math.pow(pokemon.stamina + _s, 0.5),
-                hpCheck = parseInt(Math.floor((pokemon.stamina + _s) * cpMulti, 10));
+                hpCheck = parseInt(Math.floor((pokemon.stamina + _s) * cpMulti));
 
             if ((hp == 10 && hpCheck <= hp) || (hp > 10 && hpCheck == hp)) {
 
@@ -860,7 +903,7 @@ $(function () {
                 var a = pokemon.attack + _a;
                 for (var _d = 0; _d < 16; _d++) {
                   var d = Math.pow(pokemon.defense + _d, 0.5),
-                      cpCheck = parseInt(Math.floor(cpSq * s * a * d / 10), 10);
+                      cpCheck = parseInt(Math.floor(cpSq * s * a * d / 10));
 
                   if ((cp == 10 && cpCheck <= cp) || (cp > 10 && cpCheck == cp)) {
                     matches.push({
