@@ -483,22 +483,22 @@ li.active .badge {
 
 .tabinfromleft {
   position: relative;
-  animation: tabinfromleft 1s ease 1 forwards;
+  animation: tabinfromleft 0.5s ease 1 forwards;
 }
 
 .tabinfromright {
   position: relative;
-  animation: tabinfromright 1s ease 1 forwards;
+  animation: tabinfromright 0.5s ease 1 forwards;
 }
 
 .tabouttoleft {
   position: absolute;
-  animation: tabouttoleft 1s ease 1 forwards;
+  animation: tabouttoleft 0.5s ease 1 forwards;
 }
 
 .tabouttoright {
   position: absolute;
-  animation: tabouttoright 1s ease 1 forwards;
+  animation: tabouttoright 0.5s ease 1 forwards;
 }
 
 .tabs-fixed {
