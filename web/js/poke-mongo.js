@@ -973,7 +973,7 @@ $(function () {
         // Themes
         var savedTheme = localStorage.getItem("team_theme"),
             swipables = document.getElementsByTagName("body")[0],
-            swipers = new Hammer(swipables);
+            swipers = new Hammer(window);
 
         swipers.on("swipeleft", function (e) {
           var $next = $(".tabs-wrapper .tab a.active").closest(".tab").next();
