@@ -995,6 +995,12 @@ $(function () {
           }
         });
 
+        $("#tab-types > div").bind("touchstart", function (e) {
+          if ($(this).scrollLeft() > 0) {
+            e.stopPropagation();
+          }
+        })
+
         $('input[name="team-theme"]').change(function (e) {
           var val = $(this).val(),
               theme = THEMES[val];
