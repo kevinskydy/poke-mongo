@@ -509,13 +509,19 @@ li.active .badge {
   z-index: 997;
 }
 
-/*.tab-bodies > .col {
+.tab-bodies {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.tab-bodies > .col {
   display: block !important;
 }
 
 .tab-bodies > .col:not(.active-tab) {
-  display: none !important;
-}*/
+  position: absolute;
+  left: 200%;
+}
 
 li .member-detail {
   display: inline-block;
