@@ -1004,26 +1004,26 @@ $(function () {
           edge: "right",
           closeOnClick: true
         });
-        $('ul.tabs').tabs({onShow: function (active) {
-          var $prev = $(".active-tab"),
-              $curr = $(active),
-              prevTabIdx = $(".tab-bodies > .col").index($prev),
-              currTabIdx = $(".tab-bodies > .col").index($curr);
-
-          // console.log(prevTabIdx, currTabIdx);
-
-          $prev.removeClass('active-tab tabinfromright tabinfromleft');
-          $curr.removeClass("tabouttoleft tabouttoright");
-          if (currTabIdx > prevTabIdx) {
-            $curr.addClass("tabinfromright active-tab");
-            $prev.addClass("tabouttoleft");
-          }
-          else if (currTabIdx < prevTabIdx) {
-            $curr.addClass("tabinfromleft active-tab");
-            $prev.addClass("tabouttoright");
-          }
-
-        }});
+        // $('ul.tabs').tabs({onShow: function (active) {
+        //   var $prev = $(".active-tab"),
+        //       $curr = $(active),
+        //       prevTabIdx = $(".tab-bodies > .col").index($prev),
+        //       currTabIdx = $(".tab-bodies > .col").index($curr);
+        //
+        //   // console.log(prevTabIdx, currTabIdx);
+        //
+        //   $prev.removeClass('active-tab tabinfromright tabinfromleft');
+        //   $curr.removeClass("tabouttoleft tabouttoright");
+        //   if (currTabIdx > prevTabIdx) {
+        //     $curr.addClass("tabinfromright active-tab");
+        //     $prev.addClass("tabouttoleft");
+        //   }
+        //   else if (currTabIdx < prevTabIdx) {
+        //     $curr.addClass("tabinfromleft active-tab");
+        //     $prev.addClass("tabouttoright");
+        //   }
+        //
+        // }});
         $('select').material_select();
         $('.modal-trigger').leanModal({ dismissable: true });
 
