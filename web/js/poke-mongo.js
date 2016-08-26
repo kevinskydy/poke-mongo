@@ -1032,7 +1032,7 @@ $(function () {
           edge: "right",
           closeOnClick: true
         });
-        $(".drag-target").bind("touchstart", function (e) { e.stopPropagation(); });
+        $(".drag-target, #mobile-menu").bind("touchstart", function (e) { e.stopPropagation(); });
         $('ul.tabs').tabs({onShow: function (active) {
           var $prev = $(".active-tab"),
               $curr = $(active),
