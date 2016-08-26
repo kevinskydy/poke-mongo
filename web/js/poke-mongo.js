@@ -972,13 +972,13 @@ $(function () {
       initialize = function () {
         // Themes
         var savedTheme = localStorage.getItem("team_theme"),
-            swipables = document.getElementById("tab-bodies"),
+            swipables = document.getElementsByTagName("body")[0],
             swipers = new Hammer(swipables);
 
         swipers.on("swipeleft", function (e) {
           var $next = $(".tabs-wrapper .tab a.active").closest(".tab").next();
 
-          console.log($next.length);
+          // console.log($next.length);
 
           if ($next.length) {
             $next.find("a").click();
@@ -988,7 +988,7 @@ $(function () {
         swipers.on("swiperight", function (e) {
           var $next = $(".tabs-wrapper .tab a.active").closest(".tab").prev();
 
-          console.log($next.length);
+          // console.log($next.length);
 
           if ($next.length) {
             $next.find("a").click();
