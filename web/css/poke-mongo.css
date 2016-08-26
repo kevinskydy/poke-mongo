@@ -444,12 +444,78 @@ li.active .badge {
 }
 
 /* Poke-mongo */
+
+@keyframes tabinfromleft {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes tabinfromright {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes tabouttoleft {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes tabouttoright {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.tabinfromleft {
+  position: relative;
+  animation: tabinfromleft 1s ease 1 forwards;
+}
+
+.tabinfromright {
+  position: relative;
+  animation: tabinfromright 1s ease 1 forwards;
+}
+
+.tabouttoleft {
+  position: absolute;
+  animation: tabouttoleft 1s ease 1 forwards;
+}
+
+.tabouttoright {
+  position: absolute;
+  animation: tabouttoright 1s ease 1 forwards;
+}
+
 .tabs-fixed {
   height: 48px;
 }
 
 .tabs-fixed .tabs-wrapper {
   z-index: 997;
+}
+
+.tab-bodies > .col {
+  display: block !important;
+}
+
+.tab-bodies > .col:not(.active-tab) {
+  position: absolute;
+  left: 200%;
 }
 
 li .member-detail {

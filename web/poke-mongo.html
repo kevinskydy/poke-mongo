@@ -30,14 +30,26 @@
   <body>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="http://hammerjs.github.io/dist/hammer.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
     <script src="js/poke-mongo.js"></script>
     <header>
-      <nav class="red lighten-1">
+      <nav class="themeable red">
         <div class="nav-wrapper">
           <a href="#" class="brand-logo center"><span class="pokeball"></span></a>
+          <a href="#" data-activates="mobile-menu" class="button-collapse right"><i class="material-icons">menu</i></a>
+
+
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="modal-trigger" href="#modal-settings">Settings</a></li>
+            <!--li><a href="collapsible.html">JavaScript</a></li-->
+          </ul>
+
+          <ul class="side-nav" id="mobile-menu">
+            <li><a class="modal-trigger" href="#modal-settings">Settings</a></li>
+          </ul>
         </div>
       </nav>
     </header>
@@ -47,14 +59,14 @@
         <div class="row tabs-fixed">
           <div class="col s12 white tabs-wrapper">
             <ul class="tabs">
-              <li class="tab col s3"><a href="#tab-calc">Movesets</a></li>
-              <li class="tab col s3"><a class="active" href="#my-team">My Team</a></li>
-              <li class="tab col s3"><a href="#tab-types">Types Chart</a></li>
+              <li class="tab col s3"><a class="themeable-text" href="#tab-calc">Movesets</a></li>
+              <li class="tab col s3"><a class="themeable-text active" href="#my-team">My Team</a></li>
+              <li class="tab col s3"><a class="themeable-text" href="#tab-types">Types Chart</a></li>
             </ul>
           </div>
         </div>
-        <div class="row">
-          <div id="tab-calc" class="col s12">
+        <div class="row tab-bodies">
+          <div id="tab-calc" class="col s12 tab">
             <!--<div class="container">-->
             <div class="row">
               <div class="section">
@@ -241,7 +253,7 @@
             <!--</div>-->
           </div>
 
-          <div id="my-team" class="col s12 l12">
+          <div id="my-team" class="col s12 l12 active-tab">
             <div class="row">
               <form id="add-member-form" class="col s12 l12 center-align">
                 <div class="row">
@@ -318,6 +330,36 @@
 
     <div id="modal-moves"></div>
     <div id="modal-misc">
+      <div id="modal-settings" class="modal">
+        <div class="modal-content">
+          <h4 class="teal-text">Settings</h4>
+          <div class="divider"></div>
+          <div class="section">
+            <h5>Theme</h5>
+            <form id="settings">
+              <table class="responsive-table">
+                <tbody>
+                  <tr>
+                    <td>
+                      <input id="theme-valor" type="radio" name="team-theme" value="Valor" checked>
+                      <label for="theme-valor">Valor</label>
+                    </td>
+                    <td>
+                      <input id="theme-mystic" type="radio" name="team-theme" value="Mystic">
+                      <label for="theme-mystic">Mystic</label>
+                    </td>
+                    <td>
+                      <input id="theme-instinct" type="radio" name="team-theme" value="Instinct">
+                      <label for="theme-instinct">Instinct</label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+
       <div id="modal-clear-team" class="modal bottom-sheet">
         <div class="container">
           <div class="modal-content">

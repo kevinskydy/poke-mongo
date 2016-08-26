@@ -23,6 +23,23 @@ $(function () {
       levelMultipliers = {},
       STAB_MULTIPLIER = 1.25,
       CHARGE_TIME = 1.0,
+      THEMES = {
+        Valor: {
+          bg: "red",
+          text: "red-text",
+          logo: "pokeball"
+        },
+        Mystic: {
+          bg: "blue darken-2",
+          text: "blue-text text-darken-2",
+          logo: "greatball"
+        },
+        Instinct: {
+          bg: "yellow darken-2",
+          text: "yellow-text text-darken-3",
+          logo: "ultraball"
+        }
+      },
       bindListeners = function() {
         var calculate = function () {
               var name = $("#your-pokemon").val().trim().toLowerCase(),
@@ -953,6 +970,28 @@ $(function () {
       },
 
       initialize = function () {
+        // Themes
+        var savedTheme = localStorage.getItem("team_theme");
+
+        $('input[name="team-theme"]').change(function (e) {
+          var val = $(this).val(),
+              theme = THEMES[val];
+
+          if (!theme) {
+            return;
+          }
+
+          $(".themeable, .tabs .indicator").removeClass("red blue yellow darken-2");
+          $(".themeable-text").removeClass("red-text blue-text yellow-text text-darken-2 text-darken-3");
+          $(".brand-logo span").removeClass("pokeball greatball ultraball");
+
+          $(".themeable, .tabs .indicator").addClass(theme.bg);
+          $(".themeable-text").addClass(theme.text);
+          $(".brand-logo span").addClass(theme.logo);
+
+          localStorage.setItem("team_theme", val);
+        });
+
         // PUSHPIN on tabs
         $('.tabs-fixed .tabs-wrapper').pushpin({ top: $('.tabs-wrapper').offset().top});
         // rebinding pushpin fixes snapping one responsive screens
@@ -961,8 +1000,37 @@ $(function () {
           $('.tabs-fixed .tabs-wrapper').pushpin({ top: $('.tabs-wrapper').offset().top});
         });
 
+        $(".button-collapse").sideNav({
+          edge: "right",
+          closeOnClick: true
+        });
+        $('ul.tabs').tabs({onShow: function (active) {
+          var $prev = $(".active-tab"),
+              $curr = $(active),
+              prevTabIdx = $(".tab-bodies > .col").index($prev),
+              currTabIdx = $(".tab-bodies > .col").index($curr);
+
+          // console.log(prevTabIdx, currTabIdx);
+
+          $prev.removeClass('active-tab tabinfromright tabinfromleft');
+          $curr.removeClass("tabouttoleft tabouttoright");
+          if (currTabIdx > prevTabIdx) {
+            $curr.addClass("tabinfromright active-tab");
+            $prev.addClass("tabouttoleft");
+          }
+          else if (currTabIdx < prevTabIdx) {
+            $curr.addClass("tabinfromleft active-tab");
+            $prev.addClass("tabouttoright");
+          }
+
+        }});
         $('select').material_select();
         $('.modal-trigger').leanModal({ dismissable: true });
+
+        if (savedTheme) {
+          $('input[value="' + savedTheme + '"]').prop("checked", true);
+          $('input[name="team-theme"]').change();
+        }
 
         /*$(".button-collapse").sideNav({
           edge: "right",
@@ -976,6 +1044,6 @@ $(function () {
   if (!localStorage.myTeam) {
     localStorage.setObject("myTeam", {});
   }
-  
+
   initialize();
 });
