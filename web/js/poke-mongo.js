@@ -1058,7 +1058,7 @@ $(function () {
 
         if (savedTheme) {
           $('input[value="' + savedTheme + '"]').prop("checked", true);
-          $('input[name="team-theme"]').change();
+          $('input[value="' + savedTheme + '"]').change();
         }
 
         /*$(".button-collapse").sideNav({
