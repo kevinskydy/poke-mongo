@@ -1018,6 +1018,9 @@ $(function () {
           $(".brand-logo span").addClass(theme.logo);
 
           localStorage.setItem("team_theme", val);
+          ga(function (tracker) {
+            tracker.send("event", "theme", val);
+          });
         });
 
         // PUSHPIN on tabs
