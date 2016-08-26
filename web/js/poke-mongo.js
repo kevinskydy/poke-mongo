@@ -186,6 +186,9 @@ $(function () {
             $(".modal-trigger").leanModal({
               dismissable: true
             });
+            ga(function (tracker) {
+              tracker.send("event", "movesets", pokemon.name);
+            });
             return;
           }
 
@@ -193,6 +196,9 @@ $(function () {
             Materialize.toast("Failed to engage wild " + name.slice(0,1).toUpperCase() + name.slice(1) + ".", 4000);
             $(".modal-trigger").leanModal({
               dismissable: true
+            });
+            ga(function (tracker) {
+              tracker.send("event", "movesets", pokemon.name);
             });
             return;
           }
@@ -234,6 +240,10 @@ $(function () {
 
           $(".has-enemy-match").show();
 
+          ga(function (tracker) {
+            tracker.send("event", "movesets", pokemon.name, enemyPokemon.name);
+          });
+
           $(".modal-trigger").leanModal({
             dismissable: true
           });
@@ -264,6 +274,10 @@ $(function () {
             Materialize.toast("Could not calculate IVs for " + pokemon.name, 4000);
             return;
           }
+
+          ga(function (tracker) {
+            tracker.send("event", "myTeam", "ivMatch", pokemon.name);
+          });
 
           var key = getKey(pokemon, cp, hp, dust, powered);
 
@@ -722,6 +736,10 @@ $(function () {
           return;
         }
 
+        ga(function (tracker) {
+          tracker.send("event", "myTeam", "ivUpdate", pokemon.name);
+        });
+
         var myTeam = localStorage.getObject("myTeam"),
             testKey = getKey(pokemon);
 
@@ -958,6 +976,6 @@ $(function () {
   if (!localStorage.myTeam) {
     localStorage.setObject("myTeam", {});
   }
-
+  
   initialize();
 });
